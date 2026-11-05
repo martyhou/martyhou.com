@@ -47,7 +47,7 @@ h1,h2,h3{text-wrap:balance;line-height:1.25;font-weight:900;letter-spacing:.01em
 #deck{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior:contain}
 .slide{min-height:100dvh;scroll-snap-align:start;display:flex;align-items:center;position:relative;padding:calc(84px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) calc(72px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line)}
 .inner{width:100%;max-width:1240px;margin:0 auto;display:grid;gap:28px;min-width:0}
-.slide h1{font-size:clamp(40px,6.4vw,92px)}
+.slide h1{font-size:clamp(34px,5.6vw,80px)}
 .slide h2{font-size:clamp(32px,4.4vw,64px)}
 .slide .lead{font-size:clamp(18px,1.7vw,23px);max-width:34em;color:var(--ink)}
 .slide .lead.muted{color:var(--muted)}
@@ -61,6 +61,7 @@ h1,h2,h3{text-wrap:balance;line-height:1.25;font-weight:900;letter-spacing:.01em
 .cover .inner{position:relative;z-index:1}
 .stats{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:8px}
 .stat b{display:block;font-family:var(--mono);font-size:clamp(28px,3.2vw,44px);font-weight:600;line-height:1.1;color:var(--ink)}
+.stat.key b{color:var(--accent);font-size:clamp(40px,4.6vw,64px)}
 .stat span{font-size:15px;color:var(--muted)}
 .hint{font-family:var(--mono);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 22px}
 .hint kbd{font-family:inherit;border:1px solid var(--line);border-radius:4px;padding:0 6px;color:var(--ink)}
@@ -77,8 +78,9 @@ h1,h2,h3{text-wrap:balance;line-height:1.25;font-weight:900;letter-spacing:.01em
 .phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;counter-reset:ph}
 .phase{border-top:3px solid var(--line);padding-top:18px;display:grid;gap:8px;align-content:start;cursor:pointer;background:none;border-left:0;border-right:0;border-bottom:0;text-align:left;color:inherit}
 .phase:hover{border-top-color:var(--accent)}
-.phase .when{font-family:var(--mono);font-size:14px;color:var(--accent)}
-.phase h3{font-size:clamp(22px,2.2vw,30px)}
+.phase .when{font-family:var(--mono);font-size:14px;color:var(--muted)}
+.phase h3{font-size:clamp(19px,1.8vw,25px);line-height:1.4}
+.phase .why{font-family:var(--mono);font-size:clamp(22px,2.2vw,30px);font-weight:600;color:var(--accent);letter-spacing:.06em}
 .phase .n{font-family:var(--mono);font-size:clamp(26px,2.8vw,38px);font-weight:600}
 .phase .n small{font-size:15px;color:var(--muted);font-weight:400;margin-left:8px}
 
@@ -86,6 +88,8 @@ h1,h2,h3{text-wrap:balance;line-height:1.25;font-weight:900;letter-spacing:.01em
 .feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:44px;align-items:center}
 .facts{display:grid;gap:14px;margin:0;padding:0;list-style:none;font-size:17px}
 .facts li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px}
+.facts.big{font-size:clamp(18px,1.6vw,22px);gap:10px}
+.facts.big li::before{margin-top:13px}
 .facts li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:10px}
 
 /* audiences */
@@ -125,7 +129,7 @@ h1,h2,h3{text-wrap:balance;line-height:1.25;font-weight:900;letter-spacing:.01em
 .steps li .k::before{content:"0" counter(st) "　"}
 
 /* end */
-.lines{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 22px;font-size:clamp(18px,1.8vw,24px);margin:0}
+.lines{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 22px;font-size:clamp(16px,1.4vw,19px);margin:0;padding-top:18px;border-top:1px solid var(--line)}
 .lines dt{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:6px}
 .lines dd{margin:0;word-break:break-all}
 .lines a{text-decoration:none;border-bottom:1px solid var(--line)}
@@ -206,13 +210,16 @@ dialog::backdrop{background:rgba(8,9,11,.88)}
   <div class="mosaic" id="mosaic" aria-hidden="true"></div>
   <div class="inner">
     <p class="label">5IN 實驗教育機構・影像合作紀錄・2025–2026</p>
-    <h1>一所新學校，<br>一學期接一學期<span class="accent">。</span></h1>
-    <p class="lead muted">從學校成立前的形象影片，到成立後的兩個學期。企劃、關鍵日拍攝、素材整理、剪輯、字幕、包裝，都由我負責。</p>
+    <h1>一所新的實驗學校，<br>每學期一套目的不同的影片<span class="accent">。</span></h1>
+    <ul class="facts big">
+      <li><span>從學校成立前，到成立後兩個學期（第三學期進行中）。</span></li>
+      <li><span>企劃、關鍵拍攝、素材整理、剪輯，都由我負責。</span></li>
+    </ul>
     <div class="stats">
-      <div class="stat"><b>22</b><span>支影片</span></div>
+      <div class="stat key"><b>22</b><span>支影片</span></div>
       <div class="stat"><b id="totalTc">2:15:57</b><span>總片長</span></div>
       <div class="stat"><b>3</b><span>個階段</span></div>
-      <div class="stat"><b>80%</b><span>素材由校方拍攝</span></div>
+      <div class="stat key"><b>80%</b><span>素材由校方拍攝</span></div>
     </div>
     <p class="hint"><span><kbd>→</kbd> <kbd>↓</kbd> 或往下滑翻頁</span><span><kbd>O</kbd> 看全部影片</span></p>
   </div>
@@ -226,32 +233,37 @@ dialog::backdrop{background:rgba(8,9,11,.88)}
       <div class="theirs"><b>80%</b><span>老師和學生自己拍：手機、360 相機、課堂錄影、日常訪談</span></div>
       <div class="mine"><b>20%</b><span>我到場拍：關鍵的日子</span></div>
     </div>
-    <p class="lead muted">學校每天上課，我不可能天天在場。所以我的工作有一大半在開拍之前和拍完之後：先決定要拍什麼、請誰拍、怎麼拍，再把各種來源的素材整理成能剪的樣子。</p>
+    <ul class="facts big">
+      <li><span>學校天天上課，我不可能天天在場。</span></li>
+      <li><span>開拍前：決定拍什麼、請誰拍、怎麼拍。</span></li>
+      <li><span>拍完後：把各種來源的素材，整理成能剪的樣子。</span></li>
+    </ul>
   </div>
 </section>
 
 <section class="slide" data-name="三個階段">
   <div class="inner">
     <p class="label">合作經過</p>
-    <h2>三個階段，22 支影片<span class="accent">。</span></h2>
+    <h2>三個階段，三個目的<span class="accent">。</span></h2>
     <div class="phases">
-      <button type="button" class="phase" data-go="4"><span class="when">2025・成立之前</span><h3>形象影片</h3><span class="n">1 支<small>03:01</small></span><span class="muted">讓家長在報名前看見孩子怎麼學</span></button>
-      <button type="button" class="phase" data-go="5"><span class="when">2025 秋・第一學期</span><h3>學期紀錄</h3><span class="n">13 支<small>1:03:35</small></span><span class="muted">從主題、時間、日常三個角度看</span></button>
-      <button type="button" class="phase" data-go="9"><span class="when">2026 春・第二學期</span><h3>觀察式影集</h3><span class="n">8 支<small>1:09:21</small></span><span class="muted">6 集影集、2 支活動紀錄</span></button>
+      <button type="button" class="phase" data-go="4"><span class="why">WHY</span><span class="when">2025・成立之前</span><h3>讓來聽說明的家長，懂這所學校的理念</h3><span class="n">1 支<small>03:01</small></span><span class="muted">形象影片</span></button>
+      <button type="button" class="phase" data-go="5"><span class="why">WHAT</span><span class="when">2025 秋・第一學期</span><h3>用一套完整的影片，看懂學校和教法</h3><span class="n">13 支<small>1:03:35</small></span><span class="muted">主題、時間、日常三個角度</span></button>
+      <button type="button" class="phase" data-go="9"><span class="why">HOW</span><span class="when">2026 春・第二學期</span><h3>用實境秀，體驗學生怎麼學、怎麼過、學到什麼</h3><span class="n">8 支<small>1:09:21</small></span><span class="muted">6 集實境影集、2 支當天紀錄</span></button>
     </div>
   </div>
 </section>
 
 <section class="slide" data-name="成立之前">
   <div class="inner">
-    <p class="label">01・2025・成立之前</p>
+    <p class="label">01・2025・成立之前・WHY</p>
     <div class="feature">
       <div class="inner" style="gap:22px">
-        <h2>開學前，先讓家長看見孩子怎麼學<span class="accent">。</span></h2>
-        <ul class="facts">
-          <li><span>不寫腳本，拍學生真實的學習片段，再配上師長訪談。</span></li>
-          <li><span>和音樂製作人對談、設計會彈出和弦的鍵盤、和老師打羽球、和 mentor 談霸凌與自我懷疑。</span></li>
-          <li><span>交付 3 分鐘形象影片，另剪 1 分鐘短版。</span></li>
+        <h2>在真實世界裡，<br>解決真實的問題<span class="accent">。</span></h2>
+        <ul class="facts big">
+          <li><span>目的：讓來聽說明的家長，懂 5IN 的理念。</span></li>
+          <li><span>理念：孩子在真實世界裡解決真實的問題、做真實的事，有能力創造自己的未來。</span></li>
+          <li><span>做法：不寫腳本，拍學生真實的學習片段，配上師長訪談。</span></li>
+          <li><span>交付：3 分鐘形象影片，另剪 1 分鐘短版。</span></li>
         </ul>
       </div>
       <div class="films big" style="--cols:1" data-ids="bjZU9xXtfDI"></div>
@@ -261,22 +273,24 @@ dialog::backdrop{background:rgba(8,9,11,.88)}
 
 <section class="slide" data-name="第一學期">
   <div class="inner">
-    <p class="label">02・2025 秋・第一學期</p>
-    <h2>同一個學期，三個角度<span class="accent">。</span></h2>
-    <p class="lead muted">學校剛成立，主管機關、考慮報名的家長、已經在讀的學生家長，都需要看懂這所實驗學校在做什麼。13 支影片，從三個角度看同一個學期。</p>
+    <p class="label">02・2025 秋・第一學期・WHAT</p>
+    <h2>一個學期，三個角度看清楚<span class="accent">。</span></h2>
+    <ul class="facts big">
+      <li><span>目的：用一套完整的影片，讓主管機關和家長看懂這所學校和它的教法。</span></li>
+    </ul>
     <div class="aud">
-      <div class="card"><span class="k">主題・5 個主題</span><h3>一個主題，從開始到完成</h3><p>5IN 採主題式教學。每個主題從準備拍到完成。</p><span class="to">做椅子、社區地圖、萬聖節、感恩節、聖誕節</span></div>
-      <div class="card"><span class="k">時間・5 支</span><h3>每個月做了什麼</h3><p>9 到 12 月各一支，學期末再一支總回顧。</p><span class="to">9 月、10 月、11 月、12 月、第一學期回顧</span></div>
-      <div class="card"><span class="k">日常・3 支</span><h3>主題之外的每一天</h3><p>上課、每天的例行工作、運動。</p><span class="to">上課情形、每天都要做的事、運動與健身</span></div>
+      <div class="card"><span class="k">主題・5 個主題</span><h3>一個教學主題，一支片說清楚</h3><p>5IN 採主題式教學。</p><span class="to">做椅子、社區地圖、萬聖節、感恩節、聖誕節</span></div>
+      <div class="card"><span class="k">時間・5 支</span><h3>每個月做了什麼</h3><p>9 到 12 月各一支，學期末一支總回顧。</p><span class="to">9 月、10 月、11 月、12 月、第一學期回顧</span></div>
+      <div class="card"><span class="k">日常・3 支</span><h3>每天日常的模樣</h3><p>上課、每天的例行工作、運動。</p><span class="to">上課情形、每天都要做的事、運動與健身</span></div>
     </div>
-    <p class="note"><b>兩個角度重疊的地方：</b>12 月整個月都在準備聖誕節，所以 12 月回顧同時是「時間」的一支，也是聖誕節主題的上集；下集是活動當天。<br><b>我到場拍：</b>感恩節晚餐、聖誕節活動當天。其餘素材來自老師的日常拍攝。</p>
+    <p class="note"><b>我到場拍：</b>感恩節晚餐、聖誕節活動當天。其餘素材來自老師的日常拍攝。</p>
   </div>
 </section>
 
 <section class="slide" data-name="主題">
   <div class="inner">
     <p class="label">02・第一學期・主題</p>
-    <h2>一個主題，從開始到完成<span class="accent">。</span></h2>
+    <h2>一個教學主題，一支片說清楚<span class="accent">。</span></h2>
     <div class="films" data-lens="主題"></div>
   </div>
 </section>
@@ -292,40 +306,41 @@ dialog::backdrop{background:rgba(8,9,11,.88)}
 <section class="slide" data-name="日常">
   <div class="inner">
     <p class="label">02・第一學期・日常</p>
-    <h2>主題之外的每一天<span class="accent">。</span></h2>
+    <h2>每天日常的模樣<span class="accent">。</span></h2>
     <div class="films" data-lens="日常"></div>
   </div>
 </section>
 
 <section class="slide" data-name="第二學期">
   <div class="inner">
-    <p class="label">03・2026 春・第二學期</p>
-    <h2>跟拍一整個學期，<br>做成 6 集影集<span class="accent">。</span></h2>
-    <p class="lead">這學期學生的任務，是替收容所的流浪狗做認養宣傳：認識議題、到收容所認識自己負責的狗、做研究、做 3D 模型和網站，一路做到期末發表。</p>
-    <ul class="facts">
-      <li><span>6 集觀察式影集，加 2 支活動紀錄。沒有旁白、沒有腳本，只剪實際發生的事。</span></li>
-      <li><span>學生的日常訪談和課堂由老師拍；我到場拍收容所參訪和期末發表會。</span></li>
+    <p class="label">03・2026 春・第二學期・HOW</p>
+    <h2>一個真實的任務，<br>剪成 6 集實境秀<span class="accent">。</span></h2>
+    <ul class="facts big">
+      <li><span>目的：讓觀眾實際體驗，學生怎麼學、怎麼過校園生活、學到什麼。</span></li>
+      <li><span>任務：替收容所的流浪狗做認養宣傳。認識議題、到收容所認識自己負責的狗、做研究、做 3D 模型和網站，一路到期末發表。</span></li>
+      <li><span>形式：實境秀。真實的任務、真實的結果，沒有旁白、沒有腳本。</span></li>
+      <li><span>拍攝：老師在課堂跟拍；收容所參訪和期末發表會由我到場拍。</span></li>
     </ul>
   </div>
 </section>
 
-<section class="slide" data-name="四個判斷">
+<section class="slide" data-name="製作判斷">
   <div class="inner">
-    <p class="label">03・第二學期・做這部影集時的判斷</p>
-    <h2>四個判斷<span class="accent">。</span></h2>
+    <p class="label">03・第二學期・製作判斷</p>
+    <h2>把一學期的素材，剪成實境秀<span class="accent">。</span></h2>
     <div class="dec">
-      <div class="card"><span class="k">敘事</span><h3>不硬說學生改變了</h3><p>最初的方向是「呈現學生的轉變」。一個學期看不出明顯的轉變，硬說有並不誠實。改成呈現實際發生的事：題目被推翻、交件前一晚全部重剪、上台、檢討。</p></div>
-      <div class="card"><span class="k">結構</span><h3>集數等結局拍到才定</h3><p>原本預計 5 到 8 支短片。學期結束、素材到齊後才定為 6 集，每集 6 到 15 分鐘，長短跟著每集的事情走。</p></div>
-      <div class="card"><span class="k">拍攝</span><h3>讓老師拍得到</h3><p>學生訪談由老師在課堂空檔拍。我先寫好一份隨時可以挑著問的題庫，遇到哪個學生、有幾分鐘，就問幾題。</p></div>
-      <div class="card"><span class="k">字幕</span><h3>中英雙語字幕</h3><p>課堂上中英文混著講，全系列逐句上雙語字幕，英文保留原句，中文附在後面。</p></div>
+      <div class="card"><span class="k">人物</span><h3>用兩個學生，看見一整套教法</h3><p>一整班學生、一整學期的素材，選兩個學生當主線。教育理念很抽象，落到具體的人身上，觀眾才看得懂。</p></div>
+      <div class="card"><span class="k">伏筆</span><h3>第二集埋下，第六集才回收</h3><p>第二集，一個學生不肯跟自己負責的狗道別。到第六集，才由同學說出他後來私下回了收容所。不解釋、不放大，讓觀眾自己把六集連起來。</p></div>
+      <div class="card"><span class="k">觀眾</span><h3>檢討課不演衝突，演方法</h3><p>發表後的檢討課，組員之間有摩擦。主要觀眾是家長，他們要看的不是誰對誰錯，而是學校怎麼帶孩子面對。這一集剪的是老師的帶法。</p></div>
+      <div class="card"><span class="k">語言</span><h3>全英語課堂，兩種語言一起剪</h3><p>5IN 以英語上課，學生在課堂和訪談裡中英夾雜。選句、斷句、節奏都要同時顧到兩種語言；全系列上雙語字幕，不熟英語的家長也跟得上。</p></div>
     </div>
   </div>
 </section>
 
 <section class="slide" data-name="第二學期影片">
   <div class="inner">
-    <p class="label">03・第二學期・6 集＋2 支活動紀錄</p>
-    <h2>6 集影集，2 支活動紀錄<span class="accent">。</span></h2>
+    <p class="label">03・第二學期・6 集＋2 支</p>
+    <h2>6 集實境影集，2 支當天紀錄<span class="accent">。</span></h2>
     <div class="films four" data-phase="2"></div>
   </div>
 </section>
@@ -335,19 +350,26 @@ dialog::backdrop{background:rgba(8,9,11,.88)}
     <p class="label">工作方式</p>
     <h2>每個學期，我做這四件事<span class="accent">。</span></h2>
     <ol class="steps">
-      <li class="card"><span class="k">企劃</span><h3>先定觀眾，再定影片</h3><p>給誰看、要他們看懂哪件事，再決定做哪幾類、各幾支、多長。</p></li>
+      <li class="card"><span class="k">企劃</span><h3>先定目的，再定影片</h3><p>這個階段要讓誰看懂什麼，再決定做哪幾類、各幾支、多長。</p></li>
       <li class="card"><span class="k">拍攝</span><h3>安排誰拍、拍什麼</h3><p>告訴老師哪些場面要留下、訪談問什麼；關鍵的日子我自己到。</p></li>
       <li class="card"><span class="k">整理</span><h3>把別人的素材變成能剪的</h3><p>手機、360 相機、課堂錄影：重新構圖、整理逐字稿、標出能用的段落。</p></li>
-      <li class="card"><span class="k">後製</span><h3>剪輯、字幕與包裝</h3><p>剪出前後因果、上雙語字幕，做片頭、字卡、縮圖，上架並整理成播放清單。</p></li>
+      <li class="card"><span class="k">剪輯</span><h3>在剪輯台上導演</h3><p>素材大多不是我拍的，故事要在剪輯時找出來：這支片講哪件事、從哪裡開始、停在哪裡。</p></li>
     </ol>
   </div>
 </section>
 
-<section class="slide" data-name="聯絡">
+<section class="slide" data-name="回顧">
   <div class="inner">
-    <p class="label">侯念宗 Marty Hou・聯結影像有限公司</p>
-    <h2>你們每天在做的事，<br>也值得被拍下來<span class="accent">。</span></h2>
+    <p class="label">回顧</p>
+    <h2>影片跟著學校一起長大<span class="accent">。</span></h2>
+    <ul class="facts big">
+      <li><span>開學前，一支 3 分鐘的影片，回答「這是什麼學校」。</span></li>
+      <li><span>第一學期，13 支影片，回答「學校在做什麼」。</span></li>
+      <li><span>第二學期，6 集實境秀，回答「孩子在這裡怎麼學」。</span></li>
+      <li><span>八成素材不是我拍的。我的工作，是每個階段先想清楚要讓誰看懂什麼，再讓大家拍到、剪出來。</span></li>
+    </ul>
     <dl class="lines">
+      <dt>侯念宗</dt><dd>聯結影像有限公司</dd>
       <dt>EMAIL</dt><dd><a href="mailto:martyhou@martyhou.com">martyhou@martyhou.com</a></dd>
       <dt>電話</dt><dd><a href="tel:+886911411193">0911-411-193</a></dd>
       <dt>YOUTUBE</dt><dd><a href="https://www.youtube.com/@marty_hou" target="_blank" rel="noopener">@marty_hou</a></dd>
@@ -364,10 +386,10 @@ dialog::backdrop{background:rgba(8,9,11,.88)}
       <p class="label">總覽・5IN 實驗教育機構・2025–2026</p>
       <h2>全部影片<span class="accent">。</span></h2>
       <div class="stats">
-        <div class="stat"><b>22</b><span>支影片</span></div>
+        <div class="stat key"><b>22</b><span>支影片</span></div>
         <div class="stat"><b>2:15:57</b><span>總片長</span></div>
         <div class="stat"><b>3</b><span>個階段</span></div>
-        <div class="stat"><b>80%</b><span>素材由校方拍攝</span></div>
+        <div class="stat key"><b>80%</b><span>素材由校方拍攝</span></div>
       </div>
     </div>
     <div id="ovBody" class="inner" style="gap:48px"></div>
@@ -400,14 +422,14 @@ var F=[
  {id:'MYUTm33r6oE',t:'上課情形',d:'5:21',p:1,c:'學校生活',s:'日常'},
  {id:'4LuRzNHcGjc',t:'每天都要做的事',d:'2:01',p:1,c:'學校生活',s:'日常'},
  {id:'5kAc_Ky6t50',t:'運動與健身',d:'3:28',p:1,c:'學校生活',s:'日常'},
- {id:'2K6UTBvZkXg',t:'EP1. 了解流浪動物議題',d:'6:12',p:2,c:'影集',s:'影集'},
- {id:'ncyg2_orKUk',t:'EP2. 實際造訪收容所',d:'7:59',p:2,c:'影集',s:'影集',me:1},
- {id:'L3ykd1eQDLE',t:'EP3. 做專題研究',d:'8:53',p:2,c:'影集',s:'影集'},
- {id:'vbRATx9UyX4',t:'EP4. 很多事情！',d:'14:22',p:2,c:'影集',s:'影集'},
- {id:'wTghmBsgt0I',t:'EP5. 發表會',d:'11:10',p:2,c:'影集',s:'影集',me:1},
- {id:'tjQu-4OaD44',t:'EP6. 發表之後',d:'14:39',p:2,c:'影集',s:'影集'},
- {id:'fqkn19Wv9Ps',t:'參訪收容所',d:'2:29',p:2,c:'活動紀錄',s:'活動紀錄',me:1},
- {id:'ClEkeqY42kw',t:'期末發表會',d:'3:37',p:2,c:'活動紀錄',s:'活動紀錄',me:1}
+ {id:'2K6UTBvZkXg',t:'EP1. 了解流浪動物議題',d:'6:12',p:2,c:'實境影集',s:'實境影集'},
+ {id:'ncyg2_orKUk',t:'EP2. 實際造訪收容所',d:'7:59',p:2,c:'實境影集',s:'實境影集',me:1},
+ {id:'L3ykd1eQDLE',t:'EP3. 做專題研究',d:'8:53',p:2,c:'實境影集',s:'實境影集'},
+ {id:'vbRATx9UyX4',t:'EP4. 很多事情！',d:'14:22',p:2,c:'實境影集',s:'實境影集'},
+ {id:'wTghmBsgt0I',t:'EP5. 發表會',d:'11:10',p:2,c:'實境影集',s:'實境影集',me:1},
+ {id:'tjQu-4OaD44',t:'EP6. 發表之後',d:'14:39',p:2,c:'實境影集',s:'實境影集'},
+ {id:'fqkn19Wv9Ps',t:'參訪收容所',d:'2:29',p:2,c:'當天紀錄',s:'當天紀錄',me:1},
+ {id:'ClEkeqY42kw',t:'期末發表會',d:'3:37',p:2,c:'當天紀錄',s:'當天紀錄',me:1}
 ];
 var LENS={'主題':['59zoH9Dtzpk','BSqwqJg5izo','DmpENkqO0N0','0Y_-fLmYCjE','P5uYLKxhIRI','w_DPBM_FDtc'],
  '時間':['eeexnbX_BbI','ybJwiX1yMjw','bLiTj37EJMU','P5uYLKxhIRI','QSZnQVYR8rw'],
@@ -437,7 +459,7 @@ function secs(d){var a=d.split(':').map(Number);return a.length===2?a[0]*60+a[1]
 function fmt(s){var h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return (h?h+':'+String(m).padStart(2,'0'):m)+':'+String(x).padStart(2,'0');}
 (function(){
   var body=document.getElementById('ovBody');
-  var G=[{p:0,h:'成立之前',w:'2025',subs:['形象影片']},{p:1,h:'第一學期',w:'2025 秋',lens:['主題','時間','日常'],note:'12 月回顧同時列在主題與時間'},{p:2,h:'第二學期',w:'2026 春',subs:['影集','活動紀錄']}];
+  var G=[{p:0,h:'成立之前',w:'2025',subs:['形象影片']},{p:1,h:'第一學期',w:'2025 秋',lens:['主題','時間','日常']},{p:2,h:'第二學期',w:'2026 春',subs:['實境影集','當天紀錄']}];
   var total=0;
   G.forEach(function(g){
     var list=F.filter(function(f){return f.p===g.p;});var t=list.reduce(function(a,f){return a+secs(f.d);},0);total+=t;
