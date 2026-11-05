@@ -3,359 +3,496 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>5IN 實驗教育機構｜侯念宗 Marty Hou</title>
-<meta name="description" content="從學校成立前的形象影片，到兩個學期 21 支影片：侯念宗替 5IN 實驗教育機構規劃、拍攝、剪輯的完整紀錄。八成素材由校方自己拍。">
+<title>5IN 影像合作紀錄｜侯念宗</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
-/* Layout: same director's shot list as the home page; the case reads as a production log, phase by phase, with every film listed like a reel sheet. */
+/* Layout: a screening-room deck. One idea per screen, flipped like slides; "總覽" lays every film out on a light table. Timecode HUD in mono. */
 :root{
-  --bg:#f2f2ef; --surface:#e8e8e4; --ink:#1d1e21; --muted:#5f6166; --line:#cfcfca; --accent:#b3262e; --school:#d9822b;
-  --serif:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --bg:#16181d; --panel:#1f222a; --line:#30343e; --ink:#efebe3; --muted:#9ea0a8; --accent:#f08a2c; --accent-ink:#1a1307;
   --sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --gutter:max(20px,env(safe-area-inset-left,0px));
+  color-scheme:dark;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1c1d20;--surface:#25262a;--ink:#ecebe7;--muted:#a3a4a8;--line:#3a3b40;--accent:#e0545b;--school:#e8a05a;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#1c1d20;--surface:#25262a;--ink:#ecebe7;--muted:#a3a4a8;--line:#3a3b40;--accent:#e0545b;--school:#e8a05a;color-scheme:dark}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.75;margin:0}
-.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
 a{color:inherit}
-a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-h1,h2,h3{font-family:var(--serif);text-wrap:balance;line-height:1.3;margin:0}
-p{margin:0}
-.label{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-/* header */
-.top{border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;align-items:baseline;justify-content:space-between;padding-block:18px}
-.brand{font-weight:700;text-decoration:none;letter-spacing:.02em}
-.brand span{font-family:var(--mono);font-weight:400;font-size:13px;color:var(--muted);margin-left:8px}
-.top nav{display:flex;flex-wrap:wrap;gap:4px 20px;font-size:15px}
-.top nav a{text-decoration:none;color:var(--muted)}
-.top nav a:hover{color:var(--ink)}
-/* hero */
-.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:center;padding-block:56px 48px}
-.hero h1{font-size:clamp(34px,5.6vw,58px);font-weight:900;letter-spacing:.01em;margin-top:10px}
-.hero h1 .dot{color:var(--accent)}
-.hero .lead{font-size:19px;max-width:30em;margin-top:20px}
-.facts{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 18px;margin:26px 0 0;font-size:16px}
-.facts dt{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--muted);padding-top:3px;white-space:nowrap}
-.facts dd{margin:0}
-.btn{display:inline-block;background:var(--ink);color:var(--bg);text-decoration:none;padding:10px 18px;border-radius:3px;font-weight:500;font-size:15px}
-.btn:hover{background:var(--accent)}
-/* video facade */
-.video{position:relative;display:block;aspect-ratio:16/9;max-width:100%;background:var(--surface);border:1px solid var(--line);overflow:hidden;text-decoration:none;color:var(--ink)}
-.video img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.video .cap{position:absolute;left:0;right:0;bottom:0;display:flex;gap:10px;align-items:center;padding:10px 12px;background:linear-gradient(transparent,rgba(0,0,0,.72));color:#fff;font-size:14px;line-height:1.4}
-.video .play{flex:none;width:34px;height:34px;border-radius:50%;background:var(--accent);display:grid;place-items:center}
-.video .play::before{content:"";border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent;margin-left:3px}
-.video .rt{font-family:var(--mono);font-size:12px;opacity:.85;margin-left:auto}
-.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-/* sections */
-section{border-top:1px solid var(--line)}
-section > .wrap{padding-block:56px}
-.sec-head{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:baseline;margin-bottom:24px}
-.sec-head h2{font-size:clamp(26px,3.6vw,34px)}
-.prose{max-width:40em;display:grid;gap:14px}
-/* footage split */
-.split{margin:28px 0 10px;display:grid;grid-template-columns:80fr 20fr;border:1px solid var(--line);font-size:15px;line-height:1.5}
-.split > div{padding:14px 16px;min-width:0}
-.split .theirs{background:var(--surface)}
-.split .mine{background:var(--ink);color:var(--bg)}
-.split b{display:block;font-family:var(--mono);font-size:26px;font-weight:500;letter-spacing:.02em;margin-bottom:4px}
-.split-note{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
-/* phases */
-.phase-head{display:grid;grid-template-columns:120px minmax(0,1fr);gap:8px 28px;margin-bottom:26px}
-.phase-head .when{font-family:var(--mono);font-size:14px;color:var(--accent);padding-top:8px;line-height:1.5}
-.phase-head h2{font-size:clamp(26px,3.6vw,34px)}
-.phase-head .sub{margin-top:8px;color:var(--muted)}
-.body{display:grid;grid-template-columns:120px minmax(0,1fr);gap:28px}
-.body > *{grid-column:2;min-width:0}
-.case{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:28px;align-items:start}
-dl.qa{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 14px;font-size:16px}
-dl.qa dt{font-weight:700;white-space:nowrap}
-dl.qa dd{margin:0}
-.shot{margin-top:18px;padding:12px 16px;background:var(--surface);font-size:15.5px}
-.shot strong{font-family:var(--mono);font-weight:500;font-size:12.5px;letter-spacing:.06em;color:var(--muted);margin-right:10px}
-.more{font-size:15px;margin-top:12px;display:flex;flex-wrap:wrap;gap:4px 20px}
-/* categories with reel tiles */
-.cat{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:20px 28px;padding-block:24px;border-top:1px dashed var(--line)}
-.cat:first-of-type{border-top:0;padding-top:4px}
-.cat h3{font-size:21px}
-.cat .for{font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;color:var(--school);margin:6px 0 8px}
-.cat p{font-size:16px;color:var(--muted)}
-.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px 14px;margin:0;padding:0;list-style:none}
-.tiles.four{grid-template-columns:repeat(4,minmax(0,1fr))}
-.tile{display:block;text-decoration:none;color:var(--ink);font-size:14.5px;line-height:1.45}
-.tile .thumb{position:relative;display:block;aspect-ratio:16/9;max-width:100%;background:var(--surface);border:1px solid var(--line);overflow:hidden;margin-bottom:7px}
-.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-.tile:hover img{transform:scale(1.04)}
-.tile:hover .t{color:var(--accent)}
-.tile .rt{position:absolute;right:6px;bottom:6px;font-family:var(--mono);font-size:11.5px;background:rgba(0,0,0,.72);color:#fff;padding:1px 6px;border-radius:2px}
-.tile .k{display:block;font-family:var(--mono);font-size:12px;color:var(--muted)}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{text-wrap:balance;line-height:1.25;font-weight:900;letter-spacing:.01em}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.label{font-family:var(--mono);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent)}
+.muted{color:var(--muted)}
+
+/* HUD */
+.hud{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:calc(14px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) 14px max(20px,env(safe-area-inset-left,0px));pointer-events:none;background:linear-gradient(var(--bg) 30%,transparent)}
+.hud > *{pointer-events:auto}
+.hud .who{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;color:var(--muted)}
+.hud .who b{color:var(--ink);font-weight:600}
+.switch{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--panel)}
+.switch button{border:0;background:none;padding:6px 16px;border-radius:999px;cursor:pointer;font-size:14.5px;color:var(--muted)}
+.switch button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);font-weight:700}
+.counter{position:fixed;z-index:20;right:max(20px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));font-family:var(--mono);font-size:13px;color:var(--muted);display:flex;align-items:center;gap:10px}
+.counter button{border:1px solid var(--line);background:var(--panel);width:34px;height:34px;border-radius:50%;cursor:pointer;display:grid;place-items:center;font-size:15px;line-height:1}
+.counter button:hover{border-color:var(--accent);color:var(--accent)}
+.progress{position:fixed;z-index:21;left:0;top:0;height:3px;background:var(--accent);width:0;transition:width .35s ease}
+
+/* deck */
+#deck{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;overscroll-behavior:contain}
+.slide{min-height:100dvh;scroll-snap-align:start;display:flex;align-items:center;position:relative;padding:calc(84px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) calc(72px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));border-bottom:1px solid var(--line)}
+.inner{width:100%;max-width:1240px;margin:0 auto;display:grid;gap:28px;min-width:0}
+.slide h1{font-size:clamp(40px,6.4vw,92px)}
+.slide h2{font-size:clamp(32px,4.4vw,64px)}
+.slide .lead{font-size:clamp(18px,1.7vw,23px);max-width:34em;color:var(--ink)}
+.slide .lead.muted{color:var(--muted)}
+.accent{color:var(--accent)}
+
+/* cover */
+.cover{overflow:hidden}
+.mosaic{position:absolute;inset:-4%;display:grid;grid-template-columns:repeat(6,1fr);gap:8px;opacity:.22;transform:rotate(-4deg) scale(1.08);pointer-events:none}
+.mosaic img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border-radius:3px}
+.cover::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,var(--bg) 25%,transparent 85%);pointer-events:none}
+.cover .inner{position:relative;z-index:1}
+.stats{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:8px}
+.stat b{display:block;font-family:var(--mono);font-size:clamp(28px,3.2vw,44px);font-weight:600;line-height:1.1;color:var(--ink)}
+.stat span{font-size:15px;color:var(--muted)}
+.hint{font-family:var(--mono);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 22px}
+.hint kbd{font-family:inherit;border:1px solid var(--line);border-radius:4px;padding:0 6px;color:var(--ink)}
+
+/* 80/20 */
+.ratio{display:grid;grid-template-columns:80fr 20fr;min-height:150px;border-radius:6px;overflow:hidden}
+.ratio > div{padding:20px 22px;display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+.ratio .theirs{background:var(--panel);border:1px solid var(--line);border-right:0}
+.ratio .mine{background:var(--accent);color:var(--accent-ink)}
+.ratio b{font-family:var(--mono);font-size:clamp(40px,5vw,72px);font-weight:600;line-height:1}
+.ratio span{font-size:16px;line-height:1.5}
+
+/* timeline */
+.phases{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;counter-reset:ph}
+.phase{border-top:3px solid var(--line);padding-top:18px;display:grid;gap:8px;align-content:start;cursor:pointer;background:none;border-left:0;border-right:0;border-bottom:0;text-align:left;color:inherit}
+.phase:hover{border-top-color:var(--accent)}
+.phase .when{font-family:var(--mono);font-size:14px;color:var(--accent)}
+.phase h3{font-size:clamp(22px,2.2vw,30px)}
+.phase .n{font-family:var(--mono);font-size:clamp(26px,2.8vw,38px);font-weight:600}
+.phase .n small{font-size:15px;color:var(--muted);font-weight:400;margin-left:8px}
+
+/* two-column feature */
+.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:44px;align-items:center}
+.facts{display:grid;gap:14px;margin:0;padding:0;list-style:none;font-size:17px}
+.facts li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px}
+.facts li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:10px}
+
+/* audiences */
+.aud{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:22px;display:grid;gap:10px;align-content:start;min-width:0}
+.card .k{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.06em}
+.card h3{font-size:24px}
+.card .to{font-size:15px;color:var(--ink);border-top:1px solid var(--line);padding-top:10px}
+.card p{font-size:16px;color:var(--muted)}
+.note{font-size:16px;color:var(--muted)}
+.note b{color:var(--ink);font-weight:500}
+
+/* film tiles */
+.films{display:grid;gap:22px 18px;grid-template-columns:repeat(var(--cols,3),minmax(0,1fr))}
+.film{display:block;align-self:start;text-align:left;border:0;padding:0;background:none;cursor:pointer;color:var(--ink);min-width:0}
+.film .th{position:relative;display:block;aspect-ratio:16/9;max-width:100%;border-radius:5px;overflow:hidden;background:var(--panel);border:1px solid var(--line)}
+.film img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.film:hover img{transform:scale(1.04)}
+.film .tc{position:absolute;right:8px;bottom:8px;font-family:var(--mono);font-size:12.5px;background:rgba(10,10,12,.78);color:#fff;padding:2px 8px;border-radius:3px}
+.film .me{position:absolute;left:8px;top:8px;font-size:12px;font-weight:700;background:var(--accent);color:var(--accent-ink);padding:1px 8px;border-radius:3px}
+.film .pl{position:absolute;inset:0;display:grid;place-items:center;opacity:0;transition:opacity .25s}
+.film .pl::before{content:"";width:56px;height:56px;border-radius:50%;background:rgba(240,138,44,.95) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6.5v11l9-5.5z' fill='%231a1307'/%3E%3C/svg%3E") center/26px no-repeat}
+.film:hover .pl,.film:focus-visible .pl{opacity:1}
+.film .t{display:block;margin-top:9px;font-weight:700;font-size:16.5px;line-height:1.4}
+.film .s{display:block;font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:2px}
+.films.four{--cols:4}
+.big .film .t{font-size:clamp(17px,1.5vw,21px)}
+
 /* decisions */
-.decisions{margin:0;padding:0;list-style:none;display:grid;gap:18px;max-width:44em}
-.decisions li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px}
-.decisions li::before{content:"";width:10px;height:10px;margin-top:9px;background:var(--accent);border-radius:50%}
-.decisions h3{font-size:18px}
-.decisions p{grid-column:2;color:var(--muted);font-size:16px}
-/* process */
-.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px;margin:0;padding:0;list-style:none;counter-reset:s;max-width:52em}
-.steps li{counter-increment:s}
-.steps li::before{content:"0" counter(s);display:block;font-family:var(--mono);color:var(--accent);font-size:14px;margin-bottom:6px}
-.steps h3{font-size:19px;margin-bottom:6px}
-.steps p{color:var(--muted);font-size:16px}
-/* contact */
-.contact .wrap{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:36px;align-items:center}
-.contact img{width:100%;max-width:220px;aspect-ratio:69/78;object-fit:cover;filter:grayscale(.15)}
-.contact h2{font-size:clamp(26px,3.6vw,34px);margin-bottom:10px}
-.contact .fit{color:var(--muted);margin-bottom:18px;max-width:34em}
-.lines{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 18px;font-size:17px;margin:0}
-.lines dt{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:3px}
+.dec{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.dec .card h3{font-size:clamp(20px,1.9vw,26px)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin:0;padding:0;list-style:none;counter-reset:st}
+.steps li{counter-increment:st}
+.steps li .k::before{content:"0" counter(st) "　"}
+
+/* end */
+.lines{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 22px;font-size:clamp(18px,1.8vw,24px);margin:0}
+.lines dt{font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:6px}
 .lines dd{margin:0;word-break:break-all}
-footer{border-top:1px solid var(--line)}
-footer .wrap{padding-block:22px;font-size:13px;color:var(--muted);font-family:var(--mono);display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between}
-@media (max-width:860px){
-  .tiles,.tiles.four{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .cat{grid-template-columns:minmax(0,1fr)}
+.lines a{text-decoration:none;border-bottom:1px solid var(--line)}
+.btn{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--accent);color:var(--accent);background:none;border-radius:999px;padding:10px 22px;cursor:pointer;font-weight:700;font-size:16px;justify-self:start}
+.btn:hover{background:var(--accent);color:var(--accent-ink)}
+
+/* overview (light table) */
+#overview{height:100%;overflow-y:auto;padding:calc(88px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) calc(48px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px))}
+#overview .inner{gap:40px}
+.ov-head{display:grid;gap:18px;border-bottom:1px solid var(--line);padding-bottom:28px}
+.ov-head h2{font-size:clamp(30px,3.6vw,52px)}
+.ov-group{display:grid;gap:18px}
+.ov-group > header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px}
+.ov-group h3{font-size:clamp(22px,2.2vw,30px)}
+.ov-group .sum{font-family:var(--mono);font-size:13.5px;color:var(--muted)}
+.ov-sub{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.06em;margin-top:6px}
+.ov-group .films{--cols:5}
+
+/* lightbox */
+dialog{border:0;padding:0;background:transparent;max-width:min(1280px,94vw);width:100%}
+dialog::backdrop{background:rgba(8,9,11,.88)}
+.lb{display:grid;gap:12px}
+.lb .frame{position:relative;aspect-ratio:16/9;width:100%;background:#000;border-radius:6px;overflow:hidden}
+.lb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.lb .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--ink);font-size:16px}
+.lb .bar button{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:6px 16px;cursor:pointer}
+.lb .bar a{font-family:var(--mono);font-size:13px;color:var(--muted)}
+
+/* responsive */
+@media (max-width:1100px){.ov-group .films{--cols:4}}
+@media (max-width:900px){
+  .feature{grid-template-columns:minmax(0,1fr);gap:28px}
+  .aud,.phases{grid-template-columns:minmax(0,1fr)}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ov-group .films{--cols:3}
+  .films.four{--cols:2}
 }
-@media (max-width:760px){
-  .hero .wrap{grid-template-columns:minmax(0,1fr);gap:32px;padding-block:40px}
-  .phase-head,.body{grid-template-columns:minmax(0,1fr)}
-  .body > *{grid-column:1}
-  .phase-head .when{padding-top:0}
-  .case{grid-template-columns:minmax(0,1fr)}
-  .steps{grid-template-columns:minmax(0,1fr)}
-  .split{grid-template-columns:minmax(0,1fr)}
-  .contact .wrap{grid-template-columns:minmax(0,1fr)}
-  .contact img{max-width:160px}
+@media (max-width:600px){
+  body{font-size:16.5px}
+  .films,.ov-group .films{--cols:2}
+  .dec,.steps{grid-template-columns:minmax(0,1fr)}
+  .ratio{grid-template-columns:minmax(0,1fr)}
+  .ratio .theirs{border-right:1px solid var(--line);border-bottom:0}
+  .mosaic{grid-template-columns:repeat(3,1fr)}
+  .hud .who{display:none}
+  .slide{align-items:flex-start;min-height:auto;padding-bottom:56px}
+  #deck{scroll-snap-type:none}
+  .counter{display:none}
 }
-/* Motion: same Keynote-style rise as the home page, once, in reading order. */
+
+/* motion: content rises once as a slide arrives */
 @media (prefers-reduced-motion: no-preference){
-  @keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
-  @keyframes dot{0%{opacity:0;transform:scale(.4)}70%{opacity:1;transform:scale(1.15)}100%{opacity:1;transform:none}}
-  .hero .label{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
-  .hero h1 .ln{display:inline-block;animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
-  .hero h1 .ln:nth-child(1){animation-delay:.12s}
-  .hero h1 .ln:nth-child(3){animation-delay:.32s}
-  .hero h1 .dot{display:inline-block;animation:dot .6s cubic-bezier(.2,.7,.2,1) .75s both}
-  .hero .lead{animation:rise .8s cubic-bezier(.2,.7,.2,1) .5s both}
-  .hero .facts{animation:rise .8s cubic-bezier(.2,.7,.2,1) .62s both}
-  .hero .video{animation:rise 1s cubic-bezier(.2,.7,.2,1) .75s both}
-  .js .rv{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
-  .js .rv.in{opacity:1;transform:none}
+  .js .slide .inner > *{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  .js .slide.on .inner > *{opacity:1;transform:none}
+  .js .slide.on .inner > *:nth-child(2){transition-delay:.08s}
+  .js .slide.on .inner > *:nth-child(3){transition-delay:.16s}
+  .js .slide.on .inner > *:nth-child(4){transition-delay:.24s}
+  .js .slide.on .inner > *:nth-child(5){transition-delay:.32s}
+  @keyframes drift{from{transform:rotate(-4deg) scale(1.08) translateY(0)}to{transform:rotate(-4deg) scale(1.08) translateY(-3%)}}
+  .mosaic{animation:drift 40s ease-in-out infinite alternate}
 }
+[hidden]{display:none!important}
 </style>
-<meta property="og:title" content="5IN 實驗教育機構｜侯念宗 Marty Hou">
-<meta property="og:description" content="從學校成立前的形象影片，到兩個學期 21 支影片。八成素材由校方自己拍，我負責企劃、關鍵日拍攝與後製。">
-<meta property="og:image" content="https://i.ytimg.com/vi/bjZU9xXtfDI/hqdefault.jpg">
-<meta property="og:url" content="https://martyhou.com/5in">
-<link rel="icon" href="portrait.jpg">
 </head>
 <body>
-<header class="top"><div class="wrap">
-  <a class="brand" href="./">侯念宗<span>Marty Hou</span></a>
-  <nav aria-label="頁面導覽"><a href="#footage">素材從哪裡來</a><a href="#s0">成立之前</a><a href="#s1">第一學期</a><a href="#s2">第二學期</a><a href="#contact">聯絡</a></nav>
-</div></header>
+<div class="progress" id="progress"></div>
+<header class="hud">
+  <span class="who"><b>侯念宗 Marty Hou</b>　×　5IN 實驗教育機構</span>
+  <div class="switch" role="group" aria-label="檢視方式">
+    <button type="button" id="toDeck" aria-pressed="true">簡報</button>
+    <button type="button" id="toOv" aria-pressed="false">總覽</button>
+  </div>
+</header>
 
-<main id="top">
-<div class="hero"><div class="wrap">
-  <div>
-    <p class="label">案例・5IN 實驗教育機構・2025–2026</p>
-    <h1><span class="ln">一所新學校，</span><br><span class="ln">一學期接一學期<span class="dot">。</span></span></h1>
-    <p class="lead">5IN 是台北的一所實驗教育機構。學校成立前，我替他們拍了第一支形象影片；成立後的兩個學期，我規劃、拍攝、剪輯了 21 支影片，讓主管機關、考慮報名的家長和學生的家長，看懂這所學校每天在做什麼。</p>
-    <dl class="facts">
-      <dt>期間</dt><dd>2025 年學校成立前開始，至今持續合作</dd>
-      <dt>成片</dt><dd>1 支形象影片＋兩個學期 21 支影片，約 2 小時 13 分</dd>
-      <dt>素材</dt><dd>約八成由老師和學生自己拍，兩成由我到場拍</dd>
-      <dt>我負責</dt><dd>企劃、關鍵日拍攝、素材整理、剪輯、雙語字幕、包裝與上架</dd>
-    </dl>
-  </div>
-  <a class="video" href="https://www.youtube.com/watch?v=bjZU9xXtfDI" data-yt="bjZU9xXtfDI" target="_blank" rel="noopener">
-    <img src="https://i.ytimg.com/vi/bjZU9xXtfDI/hqdefault.jpg" alt="" onerror="this.remove()">
-    <span class="cap"><span class="play" aria-hidden="true"></span>5IN 形象影片<span class="rt">03:01</span></span>
-  </a>
-</div></div>
+<main id="deck" aria-label="簡報">
 
-<section id="footage"><div class="wrap">
-  <div class="sec-head"><h2>八成的素材不是我拍的</h2><span class="label">這個案子的工作條件</span></div>
-  <div class="prose">
-    <p>學校每天都在上課，我不可能天天在場。三個學期下來，大約八成的照片和影片是老師、學生用手機、360 相機和課堂錄影自己拍的。我只在關鍵的日子到場，例如感恩節晚餐、聖誕節活動、收容所參訪和期末發表會。</p>
-    <p>所以我的工作有一大半發生在開拍之前和拍完之後：先決定要拍什麼、請誰拍、怎麼拍，再把各種來源的素材整理成能剪的樣子，剪成一支支有前後因果的影片。</p>
-  </div>
-  <div class="split" role="img" aria-label="素材來源比例：約 80% 校方拍攝，約 20% 我到場拍攝">
-    <div class="theirs"><b>80%</b>老師與學生拍：手機、360 相機、課堂錄影、日常訪談</div>
-    <div class="mine"><b>20%</b>我到場拍：關鍵日</div>
-  </div>
-  <p class="split-note">比例為三個學期的概估</p>
-</div></section>
-
-<section id="s0"><div class="wrap">
-  <div class="phase-head">
-    <div class="when">2025<br>成立之前</div>
-    <div><h2>形象影片</h2><p class="sub">學校還在籌備，先讓家長看見這裡的孩子怎麼學。</p></div>
-  </div>
-  <div class="body"><div class="case">
-    <div>
-      <dl class="qa">
-        <dt>要解決</dt><dd>一所新的實驗學校，要讓家長在報名前知道：這裡不為考試準備，孩子實際上在學什麼。</dd>
-        <dt>做法</dt><dd>不寫腳本。拍學生真實的學習片段：和音樂製作人對談、設計會彈出和弦的鍵盤、和老師打羽球、和 mentor 談霸凌與自我懷疑，再配上師長訪談。</dd>
-        <dt>交付</dt><dd>3 分鐘形象影片，另剪 1 分鐘短版。</dd>
-      </dl>
-      <p class="more"><a href="https://www.youtube.com/watch?v=v7ZzWm5q0D0" target="_blank" rel="noopener">看 1 分鐘短版</a></p>
+<section class="slide cover" data-name="封面">
+  <div class="mosaic" id="mosaic" aria-hidden="true"></div>
+  <div class="inner">
+    <p class="label">5IN 實驗教育機構・影像合作紀錄・2025–2026</p>
+    <h1>一所新學校，<br>一學期接一學期<span class="accent">。</span></h1>
+    <p class="lead muted">從學校成立前的形象影片，到成立後的兩個學期。企劃、關鍵日拍攝、素材整理、剪輯、字幕、包裝，都由我負責。</p>
+    <div class="stats">
+      <div class="stat"><b>22</b><span>支影片</span></div>
+      <div class="stat"><b id="totalTc">2:15:57</b><span>總片長</span></div>
+      <div class="stat"><b>3</b><span>個階段</span></div>
+      <div class="stat"><b>80%</b><span>素材由校方拍攝</span></div>
     </div>
-    <a class="video" href="https://www.youtube.com/watch?v=bjZU9xXtfDI" data-yt="bjZU9xXtfDI" target="_blank" rel="noopener">
-      <img src="https://i.ytimg.com/vi/bjZU9xXtfDI/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">
-      <span class="cap"><span class="play" aria-hidden="true"></span>我們不教考試，是教學生創造自己的未來<span class="rt">03:01</span></span>
-    </a>
-  </div></div>
-</div></section>
-
-<section id="s1"><div class="wrap">
-  <div class="phase-head">
-    <div class="when">2025 秋<br>第一學期</div>
-    <div><h2>13 支影片，分給三種觀眾</h2><p class="sub">學校成立的第一個學期。實驗學校需要被看懂，而要看懂的人不只一種。</p></div>
+    <p class="hint"><span><kbd>→</kbd> <kbd>↓</kbd> 或往下滑翻頁</span><span><kbd>O</kbd> 看全部影片</span></p>
   </div>
-  <div class="body">
-    <dl class="qa">
-      <dt>要解決</dt><dd>主管機關要知道學校實際在做什麼；考慮報名的家長想知道孩子在這裡怎麼學；在校生的家長想看見孩子的日常。</dd>
-      <dt>做法</dt><dd>依觀眾把影片分成三類，每一類有自己的節奏和長度。5IN 採主題式教學，所以教學影片以「主題」為單位，一個主題從開始拍到完成。</dd>
-    </dl>
-    <div>
-      <div class="cat">
-        <div><h3>月度回顧</h3><p class="for">5 支・給主管機關</p><p>每個月學校做了什麼，學期末再做一支總回顧。</p></div>
-        <ul class="tiles">
-          <li><a class="tile" href="https://www.youtube.com/watch?v=eeexnbX_BbI&list=PLXzQCaPe5rD0" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/eeexnbX_BbI/mqdefault.jpg" alt="" loading="lazy"><span class="rt">4:23</span></span><span class="t">以前沒上過的課</span><span class="k">2025.09</span></a></li>
-          <li><a class="tile" href="https://www.youtube.com/watch?v=ybJwiX1yMjw&list=PLXzQCaPe5rD0" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/ybJwiX1yMjw/mqdefault.jpg" alt="" loading="lazy"><span class="rt">5:15</span></span><span class="t">成為一個小家庭</span><span class="k">2025.10</span></a></li>
-          <li><a class="tile" href="https://www.youtube.com/watch?v=bLiTj37EJMU&list=PLXzQCaPe5rD0" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/bLiTj37EJMU/mqdefault.jpg" alt="" loading="lazy"><span class="rt">3:43</span></span><span class="t">我們在忙很多事</span><span class="k">2025.11</span></a></li>
-          <li><a class="tile" href="https://www.youtube.com/watch?v=P5uYLKxhIRI&list=PLXzQCaPe5rD0" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/P5uYLKxhIRI/mqdefault.jpg" alt="" loading="lazy"><span class="rt">7:34</span></span><span class="t">各自不同的價值</span><span class="k">2025.12</span></a></li>
-          <li><a class="tile" href="https://www.youtube.com/watch?v=QSZnQVYR8rw&list=PLXzQCaPe5rD0" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/QSZnQVYR8rw/mqdefault.jpg" alt="" loading="lazy"><span class="rt">6:04</span></span><span class="t">第一學期回顧</span><span class="k">2025.09–12</span></a></li>
-        </ul>
-      </div>
-      <div class="cat">
-        <div><h3>主題教學</h3><p class="for">5 支・給考慮報名的家長</p><p>一個教學主題從開始到完成：學生怎麼動手、老師怎麼帶。</p></div>
-        <ul class="tiles">
-          <li><a class="tile" href="https://www.youtube.com/watch?v=59zoH9Dtzpk&list=PLXzQCaPe5rD0" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/59zoH9Dtzpk/mqdefault.jpg" alt="" loading="lazy"><span class="rt">5:35</span></span><span class="t">做自己的椅子</span><span class="k">主題教學</span></a></li>
-          <li><a class="tile" href="https://www.youtube.com/watch?v=BSqwqJg5izo&list=PLXzQCaPe5rD0" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/BSqwqJg5izo/mqdefault.jpg" alt="" loading="lazy"><span class="rt">2:52</span></span><span class="t">製作社區地圖</span><span class="k">主題教學</span></a></li>
-          <li><a class="tile" href="https://www.youtube.com/watch?v=DmpENkqO0N0&list=PLXzQCaPe5rD0" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/DmpENkqO0N0/mqdefault.jpg" alt="" loading="lazy"><span class="rt">5:50</span></span><span class="t">萬聖節夜宿學校</span><span class="k">主題教學</span></a></li>
-          <li><a class="tile" href="https://www.youtube.com/watch?v=0Y_-fLmYCjE&list=PLXzQCaPe5rD0" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/0Y_-fLmYCjE/mqdefault.jpg" alt="" loading="lazy"><span class="rt">7:04</span></span><span class="t">感恩節活動</span><span class="k">主題教學・我到場拍</span></a></li>
-          <li><a class="tile" href="https://www.youtube.com/watch?v=w_DPBM_FDtc&list=PLXzQCaPe5rD0" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/w_DPBM_FDtc/mqdefault.jpg" alt="" loading="lazy"><span class="rt">4:25</span></span><span class="t">聖誕節活動</span><span class="k">主題教學・我到場拍</span></a></li>
-        </ul>
-      </div>
-      <div class="cat">
-        <div><h3>學校生活</h3><p class="for">3 支・給學生家長</p><p>平常的上課、每天的例行工作、運動。家長平常看不到的那幾個小時。</p></div>
-        <ul class="tiles">
-          <li><a class="tile" href="https://www.youtube.com/watch?v=MYUTm33r6oE&list=PLXzQCaPe5rD0" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/MYUTm33r6oE/mqdefault.jpg" alt="" loading="lazy"><span class="rt">5:21</span></span><span class="t">上課情形</span><span class="k">學校生活</span></a></li>
-          <li><a class="tile" href="https://www.youtube.com/watch?v=4LuRzNHcGjc&list=PLXzQCaPe5rD0" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/4LuRzNHcGjc/mqdefault.jpg" alt="" loading="lazy"><span class="rt">2:01</span></span><span class="t">每天都要做的事</span><span class="k">學校生活</span></a></li>
-          <li><a class="tile" href="https://www.youtube.com/watch?v=5kAc_Ky6t50&list=PLXzQCaPe5rD0" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/5kAc_Ky6t50/mqdefault.jpg" alt="" loading="lazy"><span class="rt">3:28</span></span><span class="t">運動與健身</span><span class="k">學校生活</span></a></li>
-        </ul>
-      </div>
+</section>
+
+<section class="slide" data-name="工作條件">
+  <div class="inner">
+    <p class="label">工作條件</p>
+    <h2>八成的素材，不是我拍的<span class="accent">。</span></h2>
+    <div class="ratio" role="img" aria-label="素材來源：約 80% 校方拍攝，約 20% 我到場拍攝">
+      <div class="theirs"><b>80%</b><span>老師和學生自己拍：手機、360 相機、課堂錄影、日常訪談</span></div>
+      <div class="mine"><b>20%</b><span>我到場拍：關鍵的日子</span></div>
     </div>
-    <p class="shot"><strong>我到場拍</strong>感恩節晚餐、聖誕節活動當天。其餘素材來自老師的日常拍攝。</p>
+    <p class="lead muted">學校每天上課，我不可能天天在場。所以我的工作有一大半在開拍之前和拍完之後：先決定要拍什麼、請誰拍、怎麼拍，再把各種來源的素材整理成能剪的樣子。</p>
   </div>
-</div></section>
+</section>
 
-<section id="s2"><div class="wrap">
-  <div class="phase-head">
-    <div class="when">2026 春<br>第二學期</div>
-    <div><h2>跟拍一整個學期，做成 6 集影集</h2><p class="sub">這學期學生的任務：替收容所的流浪狗做認養宣傳。</p></div>
+<section class="slide" data-name="三個階段">
+  <div class="inner">
+    <p class="label">合作經過</p>
+    <h2>三個階段，22 支影片<span class="accent">。</span></h2>
+    <div class="phases">
+      <button type="button" class="phase" data-go="4"><span class="when">2025・成立之前</span><h3>形象影片</h3><span class="n">1 支<small>03:01</small></span><span class="muted">讓家長在報名前看見孩子怎麼學</span></button>
+      <button type="button" class="phase" data-go="5"><span class="when">2025 秋・第一學期</span><h3>學期紀錄</h3><span class="n">13 支<small>1:03:35</small></span><span class="muted">月度回顧、主題教學、學校生活</span></button>
+      <button type="button" class="phase" data-go="9"><span class="when">2026 春・第二學期</span><h3>觀察式影集</h3><span class="n">8 支<small>1:09:21</small></span><span class="muted">6 集影集、2 支活動紀錄</span></button>
+    </div>
   </div>
-  <div class="body">
-    <dl class="qa">
-      <dt>要解決</dt><dd>學生要從認識議題、到收容所認識自己負責的狗、做研究、做 3D 模型和網站，一路做到期末發表。學校想留下這段學習的過程，而不只是成果。</dd>
-      <dt>做法</dt><dd>跟拍整個學期，做成 6 集觀察式影集：沒有旁白、沒有腳本，只剪實際發生的事。另外為收容所參訪和期末發表會各做一支活動紀錄。</dd>
-    </dl>
-    <ul class="decisions">
-      <li><h3>不硬說學生改變了</h3><p>最初的方向是「呈現學生的轉變」。看完素材，一個學期看不出明顯的轉變，硬說有並不誠實。改成呈現實際發生的事：研究題目被推翻、交件前一晚全部重剪、上台發表、事後檢討。</p></li>
-      <li><h3>集數等結局拍到才定</h3><p>原本預計 5 到 8 支短片。學期結束、素材到齊之後才定為 6 集，每集 6 到 15 分鐘，長短跟著每集的事情走。</p></li>
-      <li><h3>讓老師拍得到</h3><p>學生訪談由老師在課堂空檔拍。我先寫好一份隨時可以挑著問的題庫給老師，遇到哪個學生、有幾分鐘，就問幾題。</p></li>
-      <li><h3>中英雙語字幕</h3><p>課堂上中英文混著講，全系列逐句上雙語字幕，英文保留原句，中文附在後面。</p></li>
+</section>
+
+<section class="slide" data-name="成立之前">
+  <div class="inner">
+    <p class="label">01・2025・成立之前</p>
+    <div class="feature">
+      <div class="inner" style="gap:22px">
+        <h2>開學前，先讓家長看見孩子怎麼學<span class="accent">。</span></h2>
+        <ul class="facts">
+          <li><span>不寫腳本，拍學生真實的學習片段，再配上師長訪談。</span></li>
+          <li><span>和音樂製作人對談、設計會彈出和弦的鍵盤、和老師打羽球、和 mentor 談霸凌與自我懷疑。</span></li>
+          <li><span>交付 3 分鐘形象影片，另剪 1 分鐘短版。</span></li>
+        </ul>
+      </div>
+      <div class="films big" style="--cols:1" data-ids="bjZU9xXtfDI"></div>
+    </div>
+  </div>
+</section>
+
+<section class="slide" data-name="第一學期">
+  <div class="inner">
+    <p class="label">02・2025 秋・第一學期</p>
+    <h2>13 支影片，分給三種觀眾<span class="accent">。</span></h2>
+    <div class="aud">
+      <div class="card"><span class="k">月度回顧・5 支</span><h3>給主管機關</h3><p>每個月學校做了什麼，學期末再做一支總回顧。</p><span class="to">實驗學校要讓主管機關看見實際在做的事</span></div>
+      <div class="card"><span class="k">主題教學・5 支</span><h3>給考慮報名的家長</h3><p>5IN 採主題式教學，一個主題從開始拍到完成。</p><span class="to">做椅子、社區地圖、萬聖節、感恩節、聖誕節</span></div>
+      <div class="card"><span class="k">學校生活・3 支</span><h3>給學生家長</h3><p>平常的上課、每天的例行工作、運動。</p><span class="to">家長平常看不到的那幾個小時</span></div>
+    </div>
+    <p class="note"><b>我到場拍：</b>感恩節晚餐、聖誕節活動當天。其餘素材來自老師的日常拍攝。</p>
+  </div>
+</section>
+
+<section class="slide" data-name="月度回顧">
+  <div class="inner">
+    <p class="label">02・第一學期・月度回顧</p>
+    <h2>每個月一支，學期末一支總回顧<span class="accent">。</span></h2>
+    <div class="films" data-cat="月度回顧"></div>
+  </div>
+</section>
+
+<section class="slide" data-name="主題教學">
+  <div class="inner">
+    <p class="label">02・第一學期・主題教學</p>
+    <h2>一個主題，從開始拍到完成<span class="accent">。</span></h2>
+    <div class="films" data-cat="主題教學"></div>
+  </div>
+</section>
+
+<section class="slide" data-name="學校生活">
+  <div class="inner">
+    <p class="label">02・第一學期・學校生活</p>
+    <h2>家長平常看不到的那幾個小時<span class="accent">。</span></h2>
+    <div class="films" data-cat="學校生活"></div>
+  </div>
+</section>
+
+<section class="slide" data-name="第二學期">
+  <div class="inner">
+    <p class="label">03・2026 春・第二學期</p>
+    <h2>跟拍一整個學期，<br>做成 6 集影集<span class="accent">。</span></h2>
+    <p class="lead">這學期學生的任務，是替收容所的流浪狗做認養宣傳：認識議題、到收容所認識自己負責的狗、做研究、做 3D 模型和網站，一路做到期末發表。</p>
+    <ul class="facts">
+      <li><span>6 集觀察式影集，加 2 支活動紀錄。沒有旁白、沒有腳本，只剪實際發生的事。</span></li>
+      <li><span>學生的日常訪談和課堂由老師拍；我到場拍收容所參訪和期末發表會。</span></li>
     </ul>
-    <ul class="tiles four">
-      <li><a class="tile" href="https://www.youtube.com/watch?v=2K6UTBvZkXg&list=PLIvSiL_zg12s" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/2K6UTBvZkXg/mqdefault.jpg" alt="" loading="lazy"><span class="rt">6:12</span></span><span class="t">EP1. 了解流浪動物議題</span><span class="k">影集</span></a></li>
-      <li><a class="tile" href="https://www.youtube.com/watch?v=ncyg2_orKUk&list=PLIvSiL_zg12s" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/ncyg2_orKUk/mqdefault.jpg" alt="" loading="lazy"><span class="rt">7:59</span></span><span class="t">EP2. 實際造訪收容所</span><span class="k">影集・我到場拍</span></a></li>
-      <li><a class="tile" href="https://www.youtube.com/watch?v=L3ykd1eQDLE&list=PLIvSiL_zg12s" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/L3ykd1eQDLE/mqdefault.jpg" alt="" loading="lazy"><span class="rt">8:53</span></span><span class="t">EP3. 做專題研究</span><span class="k">影集</span></a></li>
-      <li><a class="tile" href="https://www.youtube.com/watch?v=vbRATx9UyX4&list=PLIvSiL_zg12s" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/vbRATx9UyX4/mqdefault.jpg" alt="" loading="lazy"><span class="rt">14:22</span></span><span class="t">EP4. 很多事情！</span><span class="k">影集</span></a></li>
-      <li><a class="tile" href="https://www.youtube.com/watch?v=wTghmBsgt0I&list=PLIvSiL_zg12s" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/wTghmBsgt0I/mqdefault.jpg" alt="" loading="lazy"><span class="rt">11:10</span></span><span class="t">EP5. 發表會</span><span class="k">影集・我到場拍</span></a></li>
-      <li><a class="tile" href="https://www.youtube.com/watch?v=tjQu-4OaD44&list=PLIvSiL_zg12s" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/tjQu-4OaD44/mqdefault.jpg" alt="" loading="lazy"><span class="rt">14:39</span></span><span class="t">EP6. 發表之後</span><span class="k">影集</span></a></li>
-      <li><a class="tile" href="https://www.youtube.com/watch?v=fqkn19Wv9Ps&list=PLIvSiL_zg12s" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/fqkn19Wv9Ps/mqdefault.jpg" alt="" loading="lazy"><span class="rt">2:29</span></span><span class="t">參訪收容所</span><span class="k">活動紀錄・我到場拍</span></a></li>
-      <li><a class="tile" href="https://www.youtube.com/watch?v=ClEkeqY42kw&list=PLIvSiL_zg12s" target="_blank" rel="noopener"><span class="thumb"><img src="https://i.ytimg.com/vi/ClEkeqY42kw/mqdefault.jpg" alt="" loading="lazy"><span class="rt">3:37</span></span><span class="t">期末發表會</span><span class="k">活動紀錄・我到場拍</span></a></li>
-    </ul>
-    <p class="shot"><strong>我到場拍</strong>收容所參訪、期末發表會。學生的日常訪談與課堂由老師拍攝。</p>
   </div>
-</div></section>
+</section>
 
-<section id="how"><div class="wrap">
-  <div class="sec-head"><h2>我在這個案子裡做的事</h2><span class="label">每個學期都是這四步</span></div>
-  <ol class="steps">
-    <li><h3>先定觀眾，再定影片</h3><p>學期開始前先問：這些影片給誰看、要他們看懂哪件事。再決定做哪幾類影片、各幾支、多長。</p></li>
-    <li><h3>安排誰拍、拍什麼</h3><p>告訴老師哪些場面要留下、訪談要問什麼；關鍵的日子我自己到場。</p></li>
-    <li><h3>把別人的素材整理成能剪的樣子</h3><p>手機、360 相機、課堂錄影，各種比例和音質。重新構圖、整理逐字稿、標出能用的段落。</p></li>
-    <li><h3>剪輯、字幕與包裝</h3><p>剪出前後因果、上雙語字幕，做片頭、字卡、縮圖，上架並整理成播放清單。</p></li>
-  </ol>
-</div></section>
+<section class="slide" data-name="四個判斷">
+  <div class="inner">
+    <p class="label">03・第二學期・做這部影集時的判斷</p>
+    <h2>四個判斷<span class="accent">。</span></h2>
+    <div class="dec">
+      <div class="card"><span class="k">敘事</span><h3>不硬說學生改變了</h3><p>最初的方向是「呈現學生的轉變」。一個學期看不出明顯的轉變，硬說有並不誠實。改成呈現實際發生的事：題目被推翻、交件前一晚全部重剪、上台、檢討。</p></div>
+      <div class="card"><span class="k">結構</span><h3>集數等結局拍到才定</h3><p>原本預計 5 到 8 支短片。學期結束、素材到齊後才定為 6 集，每集 6 到 15 分鐘，長短跟著每集的事情走。</p></div>
+      <div class="card"><span class="k">拍攝</span><h3>讓老師拍得到</h3><p>學生訪談由老師在課堂空檔拍。我先寫好一份隨時可以挑著問的題庫，遇到哪個學生、有幾分鐘，就問幾題。</p></div>
+      <div class="card"><span class="k">字幕</span><h3>中英雙語字幕</h3><p>課堂上中英文混著講，全系列逐句上雙語字幕，英文保留原句，中文附在後面。</p></div>
+    </div>
+  </div>
+</section>
 
-<section class="contact" id="contact"><div class="wrap">
-  <img src="portrait.jpg" alt="侯念宗" width="220" height="249">
-  <div>
-    <h2>你們也需要一個外部影像部門？</h2>
-    <p class="fit">適合學校、教育機構、長期專案和需要持續被看見的團隊：每天在做事，但沒有人專門把它拍下來、剪出來。不用先準備腳本，說說你們在做什麼就好。</p>
+<section class="slide" data-name="第二學期影片">
+  <div class="inner">
+    <p class="label">03・第二學期・6 集＋2 支活動紀錄</p>
+    <h2>6 集影集，2 支活動紀錄<span class="accent">。</span></h2>
+    <div class="films four" data-phase="2"></div>
+  </div>
+</section>
+
+<section class="slide" data-name="我做的事">
+  <div class="inner">
+    <p class="label">工作方式</p>
+    <h2>每個學期，我做這四件事<span class="accent">。</span></h2>
+    <ol class="steps">
+      <li class="card"><span class="k">企劃</span><h3>先定觀眾，再定影片</h3><p>給誰看、要他們看懂哪件事，再決定做哪幾類、各幾支、多長。</p></li>
+      <li class="card"><span class="k">拍攝</span><h3>安排誰拍、拍什麼</h3><p>告訴老師哪些場面要留下、訪談問什麼；關鍵的日子我自己到。</p></li>
+      <li class="card"><span class="k">整理</span><h3>把別人的素材變成能剪的</h3><p>手機、360 相機、課堂錄影：重新構圖、整理逐字稿、標出能用的段落。</p></li>
+      <li class="card"><span class="k">後製</span><h3>剪輯、字幕與包裝</h3><p>剪出前後因果、上雙語字幕，做片頭、字卡、縮圖，上架並整理成播放清單。</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide" data-name="聯絡">
+  <div class="inner">
+    <p class="label">侯念宗 Marty Hou・聯結影像有限公司</p>
+    <h2>你們每天在做的事，<br>也值得被拍下來<span class="accent">。</span></h2>
     <dl class="lines">
       <dt>EMAIL</dt><dd><a href="mailto:martyhou@martyhou.com">martyhou@martyhou.com</a></dd>
       <dt>電話</dt><dd><a href="tel:+886911411193">0911-411-193</a></dd>
       <dt>YOUTUBE</dt><dd><a href="https://www.youtube.com/@marty_hou" target="_blank" rel="noopener">@marty_hou</a></dd>
-      <dt>公司</dt><dd>聯結影像有限公司</dd>
     </dl>
+    <button type="button" class="btn" id="endToOv">看全部 22 支影片 →</button>
   </div>
-</div></section>
+</section>
+
 </main>
 
-<footer><div class="wrap"><span>© 侯念宗 Marty Hou・聯結影像有限公司</span><a href="./">← 回首頁</a></div></footer>
+<main id="overview" aria-label="總覽" hidden>
+  <div class="inner">
+    <div class="ov-head">
+      <p class="label">總覽・5IN 實驗教育機構・2025–2026</p>
+      <h2>全部影片<span class="accent">。</span></h2>
+      <div class="stats">
+        <div class="stat"><b>22</b><span>支影片</span></div>
+        <div class="stat"><b>2:15:57</b><span>總片長</span></div>
+        <div class="stat"><b>3</b><span>個階段</span></div>
+        <div class="stat"><b>80%</b><span>素材由校方拍攝</span></div>
+      </div>
+    </div>
+    <div id="ovBody" class="inner" style="gap:48px"></div>
+  </div>
+</main>
+
+<div class="counter" id="counter"><span id="num" class="mono">01 / 13</span><button type="button" id="prev" aria-label="上一頁">↑</button><button type="button" id="next" aria-label="下一頁">↓</button></div>
+
+<dialog id="lb" aria-label="播放影片">
+  <div class="lb">
+    <div class="frame" id="frame"></div>
+    <div class="bar"><span id="lbTitle"></span><span style="display:flex;gap:14px;align-items:center"><a id="lbYt" href="#" target="_blank" rel="noopener">在 YouTube 開啟</a><button type="button" id="lbClose">關閉</button></span></div>
+  </div>
+</dialog>
 
 <script>
-// Scroll builds: each block rises in once as it enters the view; siblings follow one after another.
+var PL1='PLXzQCaPe5rD0', PL2='PLIvSiL_zg12s';
+var F=[
+ {id:'bjZU9xXtfDI',t:'我們不教考試，是教學生創造自己的未來',d:'3:01',p:0,c:'形象影片',s:'形象影片・2025'},
+ {id:'eeexnbX_BbI',t:'以前沒上過的課',d:'4:23',p:1,c:'月度回顧',s:'2025.09'},
+ {id:'ybJwiX1yMjw',t:'成為一個小家庭',d:'5:15',p:1,c:'月度回顧',s:'2025.10'},
+ {id:'bLiTj37EJMU',t:'我們在忙很多事',d:'3:43',p:1,c:'月度回顧',s:'2025.11'},
+ {id:'P5uYLKxhIRI',t:'各自不同的價值',d:'7:34',p:1,c:'月度回顧',s:'2025.12'},
+ {id:'QSZnQVYR8rw',t:'第一學期回顧',d:'6:04',p:1,c:'月度回顧',s:'2025.09–12'},
+ {id:'59zoH9Dtzpk',t:'做自己的椅子',d:'5:35',p:1,c:'主題教學',s:'主題教學'},
+ {id:'BSqwqJg5izo',t:'製作社區地圖',d:'2:52',p:1,c:'主題教學',s:'主題教學'},
+ {id:'DmpENkqO0N0',t:'萬聖節夜宿學校',d:'5:50',p:1,c:'主題教學',s:'主題教學'},
+ {id:'0Y_-fLmYCjE',t:'感恩節活動',d:'7:04',p:1,c:'主題教學',s:'主題教學',me:1},
+ {id:'w_DPBM_FDtc',t:'聖誕節活動',d:'4:25',p:1,c:'主題教學',s:'主題教學',me:1},
+ {id:'MYUTm33r6oE',t:'上課情形',d:'5:21',p:1,c:'學校生活',s:'學校生活'},
+ {id:'4LuRzNHcGjc',t:'每天都要做的事',d:'2:01',p:1,c:'學校生活',s:'學校生活'},
+ {id:'5kAc_Ky6t50',t:'運動與健身',d:'3:28',p:1,c:'學校生活',s:'學校生活'},
+ {id:'2K6UTBvZkXg',t:'EP1. 了解流浪動物議題',d:'6:12',p:2,c:'影集',s:'影集'},
+ {id:'ncyg2_orKUk',t:'EP2. 實際造訪收容所',d:'7:59',p:2,c:'影集',s:'影集',me:1},
+ {id:'L3ykd1eQDLE',t:'EP3. 做專題研究',d:'8:53',p:2,c:'影集',s:'影集'},
+ {id:'vbRATx9UyX4',t:'EP4. 很多事情！',d:'14:22',p:2,c:'影集',s:'影集'},
+ {id:'wTghmBsgt0I',t:'EP5. 發表會',d:'11:10',p:2,c:'影集',s:'影集',me:1},
+ {id:'tjQu-4OaD44',t:'EP6. 發表之後',d:'14:39',p:2,c:'影集',s:'影集'},
+ {id:'fqkn19Wv9Ps',t:'參訪收容所',d:'2:29',p:2,c:'活動紀錄',s:'活動紀錄',me:1},
+ {id:'ClEkeqY42kw',t:'期末發表會',d:'3:37',p:2,c:'活動紀錄',s:'活動紀錄',me:1}
+];
+function yt(f){var l=f.p===1?PL1:(f.p===2?PL2:'');return 'https://www.youtube.com/watch?v='+f.id+(l?'&list='+l:'');}
+function img(id){return 'https://i.ytimg.com/vi/'+id+'/maxresdefault.jpg';}
+function tile(f){
+  var b=document.createElement('button');b.type='button';b.className='film';b.dataset.id=f.id;
+  b.innerHTML='<span class="th"><img alt="" loading="lazy" src="'+img(f.id)+'" onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/'+f.id+'/hqdefault.jpg\'">'+(f.me?'<span class="me">含我到場拍攝</span>':'')+'<span class="tc">'+f.d+'</span><span class="pl"></span></span><span class="t"></span><span class="s"></span>';
+  b.querySelector('.t').textContent=f.t;b.querySelector('.s').textContent=f.s;
+  b.addEventListener('click',function(){play(f);});
+  return b;
+}
+function fill(el,list){list.forEach(function(f){el.appendChild(tile(f));});}
+document.querySelectorAll('#deck .films').forEach(function(el){
+  if(el.dataset.ids) fill(el,F.filter(function(f){return el.dataset.ids.split(',').indexOf(f.id)>-1;}));
+  else if(el.dataset.cat) fill(el,F.filter(function(f){return f.c===el.dataset.cat;}));
+  else if(el.dataset.phase) fill(el,F.filter(function(f){return f.p==el.dataset.phase;}));
+});
+// cover mosaic
+(function(){var m=document.getElementById('mosaic');var ids=F.map(function(f){return f.id;});ids=ids.concat(ids.slice(0,8));
+  ids.forEach(function(id){var i=document.createElement('img');i.alt='';i.src='https://i.ytimg.com/vi/'+id+'/mqdefault.jpg';m.appendChild(i);});})();
+// overview
+function secs(d){var a=d.split(':').map(Number);return a.length===2?a[0]*60+a[1]:a[0]*3600+a[1]*60+a[2];}
+function fmt(s){var h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return (h?h+':'+String(m).padStart(2,'0'):m)+':'+String(x).padStart(2,'0');}
 (function(){
-  if (!('IntersectionObserver' in window)) return;
-  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var groups = [
-    ['.sec-head'], ['.phase-head'], ['.prose'], ['.split'], ['dl.qa'], ['.case > .video'],
-    ['.cat'], ['.tiles li', .05], ['.decisions li', .08], ['.shot'], ['.steps li', .1], ['.contact img'], ['.contact .wrap > div']
-  ];
-  var els = [];
-  groups.forEach(function(g){
-    document.querySelectorAll(g[0]).forEach(function(el, i){
-      if (g[1]) el.style.setProperty('--d', ((i % 6) * g[1]).toFixed(2) + 's');
-      els.push(el);
-    });
+  var body=document.getElementById('ovBody');
+  var G=[{p:0,h:'成立之前',w:'2025',subs:['形象影片']},{p:1,h:'第一學期',w:'2025 秋',subs:['月度回顧','主題教學','學校生活']},{p:2,h:'第二學期',w:'2026 春',subs:['影集','活動紀錄']}];
+  var total=0;
+  G.forEach(function(g){
+    var list=F.filter(function(f){return f.p===g.p;});var t=list.reduce(function(a,f){return a+secs(f.d);},0);total+=t;
+    var sec=document.createElement('section');sec.className='ov-group';
+    sec.innerHTML='<header><span class="label">'+g.w+'</span><h3>'+g.h+'</h3><span class="sum">'+list.length+' 支・'+fmt(t)+'</span></header>';
+    g.subs.forEach(function(c){var sub=list.filter(function(f){return f.c===c;});if(!sub.length)return;
+      if(g.subs.length>1){var l=document.createElement('p');l.className='ov-sub';l.textContent=c+'・'+sub.length+' 支';sec.appendChild(l);}
+      var grid=document.createElement('div');grid.className='films';fill(grid,sub);sec.appendChild(grid);});
+    body.appendChild(sec);
   });
-  var vh = window.innerHeight || 800;
-  els = els.filter(function(el){ return el.getBoundingClientRect().top > vh * 0.92; });
-  document.documentElement.classList.add('js');
-  els.forEach(function(el){ el.classList.add('rv'); });
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {rootMargin: '0px 0px -8% 0px', threshold: 0.12});
-  els.forEach(function(el){ io.observe(el); });
+  document.querySelectorAll('.stat b').forEach(function(b){if(/^\d+:\d\d:\d\d$/.test(b.textContent))b.textContent=fmt(total);});
 })();
-// On the real site (top-level page), clicking a large video plays it in place; anywhere else it opens YouTube.
-(function(){
-  var top = false; try { top = window.self === window.top; } catch(e) {}
-  if (!top) return;
-  document.querySelectorAll('a.video[data-yt]').forEach(function(a){
-    a.addEventListener('click', function(ev){
-      ev.preventDefault();
-      var f = document.createElement('iframe');
-      f.src = 'https://www.youtube-nocookie.com/embed/' + a.dataset.yt + '?autoplay=1&rel=0';
-      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-      f.allowFullscreen = true; f.title = a.textContent.trim();
-      var box = document.createElement('div'); box.className = 'video'; box.appendChild(f);
-      a.replaceWith(box);
-    });
-  });
-})();
+// lightbox
+var lb=document.getElementById('lb'),frame=document.getElementById('frame');
+function play(f){
+  var top=false;try{top=window.self===window.top;}catch(e){}
+  if(!top||!lb.showModal){window.open(yt(f),'_blank','noopener');return;}
+  frame.innerHTML='';var i=document.createElement('iframe');
+  i.src='https://www.youtube-nocookie.com/embed/'+f.id+'?autoplay=1&rel=0';i.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';i.allowFullscreen=true;i.title=f.t;
+  frame.appendChild(i);document.getElementById('lbTitle').textContent=f.t+'　'+f.d;document.getElementById('lbYt').href=yt(f);lb.showModal();
+}
+function closeLb(){frame.innerHTML='';if(lb.open)lb.close();}
+document.getElementById('lbClose').addEventListener('click',closeLb);
+lb.addEventListener('close',function(){frame.innerHTML='';});
+lb.addEventListener('click',function(e){if(e.target===lb)closeLb();});
+// deck navigation
+var deck=document.getElementById('deck'),ov=document.getElementById('overview');
+var slides=[].slice.call(document.querySelectorAll('.slide')),cur=0;
+document.documentElement.classList.add('js');
+function pad(n){return String(n).padStart(2,'0');}
+function setCur(i){cur=i;document.getElementById('num').textContent=pad(i+1)+' / '+pad(slides.length);
+  document.getElementById('progress').style.width=(ov.hidden?((i+1)/slides.length*100):100)+'%';
+  slides.forEach(function(s,k){if(k===i)s.classList.add('on');});}
+function go(i){i=Math.max(0,Math.min(slides.length-1,i));slides[i].scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&e.intersectionRatio>.5)setCur(slides.indexOf(e.target));});},{root:deck,threshold:[.5,.75]});
+  slides.forEach(function(s){io.observe(s);});
+}else{slides.forEach(function(s){s.classList.add('on');});}
+setCur(0);
+document.getElementById('next').onclick=function(){go(cur+1);};
+document.getElementById('prev').onclick=function(){go(cur-1);};
+document.querySelectorAll('[data-go]').forEach(function(b){b.addEventListener('click',function(){go(+b.dataset.go-1);});});
+// mode switch
+function mode(m){var o=m==='ov';ov.hidden=!o;deck.hidden=o;document.getElementById('counter').hidden=o;
+  document.getElementById('toDeck').setAttribute('aria-pressed',String(!o));document.getElementById('toOv').setAttribute('aria-pressed',String(o));
+  document.getElementById('progress').style.width=o?'100%':((cur+1)/slides.length*100)+'%';
+  if(o){ov.scrollTop=0;}else{slides[cur].scrollIntoView();}
+  try{history.replaceState(null,'',o?'#overview':location.pathname);}catch(e){}}
+document.getElementById('toDeck').onclick=function(){mode('deck');};
+document.getElementById('toOv').onclick=function(){mode('ov');};
+document.getElementById('endToOv').onclick=function(){mode('ov');};
+if(location.hash==='#overview')mode('ov');
+document.addEventListener('keydown',function(e){
+  if(lb.open||e.metaKey||e.ctrlKey||e.altKey)return;
+  var k=e.key;
+  if(k==='o'||k==='O'){mode(ov.hidden?'ov':'deck');e.preventDefault();return;}
+  if(!ov.hidden){if(k==='Escape')mode('deck');return;}
+  if(['ArrowDown','ArrowRight','PageDown',' '].indexOf(k)>-1){go(cur+1);e.preventDefault();}
+  else if(['ArrowUp','ArrowLeft','PageUp'].indexOf(k)>-1){go(cur-1);e.preventDefault();}
+  else if(k==='Home'){go(0);e.preventDefault();}
+  else if(k==='End'){go(slides.length-1);e.preventDefault();}
+});
 </script>
 </body>
 </html>
