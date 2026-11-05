@@ -111,6 +111,7 @@ h1,h2,h3{text-wrap:balance;line-height:1.25;font-weight:900;letter-spacing:.01em
 .film:hover .pl,.film:focus-visible .pl{opacity:1}
 .film .t{display:block;margin-top:9px;font-weight:700;font-size:16.5px;line-height:1.4}
 .film .s{display:block;font-family:var(--mono);font-size:12.5px;color:var(--muted);margin-top:2px}
+.film .s.hl{color:var(--accent)}
 .films.four{--cols:4}
 .big .film .t{font-size:clamp(17px,1.5vw,21px)}
 
@@ -235,7 +236,7 @@ dialog::backdrop{background:rgba(8,9,11,.88)}
     <h2>三個階段，22 支影片<span class="accent">。</span></h2>
     <div class="phases">
       <button type="button" class="phase" data-go="4"><span class="when">2025・成立之前</span><h3>形象影片</h3><span class="n">1 支<small>03:01</small></span><span class="muted">讓家長在報名前看見孩子怎麼學</span></button>
-      <button type="button" class="phase" data-go="5"><span class="when">2025 秋・第一學期</span><h3>學期紀錄</h3><span class="n">13 支<small>1:03:35</small></span><span class="muted">月度回顧、主題教學、學校生活</span></button>
+      <button type="button" class="phase" data-go="5"><span class="when">2025 秋・第一學期</span><h3>學期紀錄</h3><span class="n">13 支<small>1:03:35</small></span><span class="muted">從主題、時間、日常三個角度看</span></button>
       <button type="button" class="phase" data-go="9"><span class="when">2026 春・第二學期</span><h3>觀察式影集</h3><span class="n">8 支<small>1:09:21</small></span><span class="muted">6 集影集、2 支活動紀錄</span></button>
     </div>
   </div>
@@ -261,37 +262,38 @@ dialog::backdrop{background:rgba(8,9,11,.88)}
 <section class="slide" data-name="第一學期">
   <div class="inner">
     <p class="label">02・2025 秋・第一學期</p>
-    <h2>13 支影片，分給三種觀眾<span class="accent">。</span></h2>
+    <h2>同一個學期，三個角度<span class="accent">。</span></h2>
+    <p class="lead muted">學校剛成立，主管機關、考慮報名的家長、已經在讀的學生家長，都需要看懂這所實驗學校在做什麼。13 支影片，從三個角度看同一個學期。</p>
     <div class="aud">
-      <div class="card"><span class="k">月度回顧・5 支</span><h3>給主管機關</h3><p>每個月學校做了什麼，學期末再做一支總回顧。</p><span class="to">實驗學校要讓主管機關看見實際在做的事</span></div>
-      <div class="card"><span class="k">主題教學・5 支</span><h3>給考慮報名的家長</h3><p>5IN 採主題式教學，一個主題從開始拍到完成。</p><span class="to">做椅子、社區地圖、萬聖節、感恩節、聖誕節</span></div>
-      <div class="card"><span class="k">學校生活・3 支</span><h3>給學生家長</h3><p>平常的上課、每天的例行工作、運動。</p><span class="to">家長平常看不到的那幾個小時</span></div>
+      <div class="card"><span class="k">主題・5 個主題</span><h3>一個主題，從開始到完成</h3><p>5IN 採主題式教學。每個主題從準備拍到完成。</p><span class="to">做椅子、社區地圖、萬聖節、感恩節、聖誕節</span></div>
+      <div class="card"><span class="k">時間・5 支</span><h3>每個月做了什麼</h3><p>9 到 12 月各一支，學期末再一支總回顧。</p><span class="to">9 月、10 月、11 月、12 月、第一學期回顧</span></div>
+      <div class="card"><span class="k">日常・3 支</span><h3>主題之外的每一天</h3><p>上課、每天的例行工作、運動。</p><span class="to">上課情形、每天都要做的事、運動與健身</span></div>
     </div>
-    <p class="note"><b>我到場拍：</b>感恩節晚餐、聖誕節活動當天。其餘素材來自老師的日常拍攝。</p>
+    <p class="note"><b>兩個角度重疊的地方：</b>12 月整個月都在準備聖誕節，所以 12 月回顧同時是「時間」的一支，也是聖誕節主題的上集；下集是活動當天。<br><b>我到場拍：</b>感恩節晚餐、聖誕節活動當天。其餘素材來自老師的日常拍攝。</p>
   </div>
 </section>
 
-<section class="slide" data-name="月度回顧">
+<section class="slide" data-name="主題">
   <div class="inner">
-    <p class="label">02・第一學期・月度回顧</p>
+    <p class="label">02・第一學期・主題</p>
+    <h2>一個主題，從開始到完成<span class="accent">。</span></h2>
+    <div class="films" data-lens="主題"></div>
+  </div>
+</section>
+
+<section class="slide" data-name="時間">
+  <div class="inner">
+    <p class="label">02・第一學期・時間</p>
     <h2>每個月一支，學期末一支總回顧<span class="accent">。</span></h2>
-    <div class="films" data-cat="月度回顧"></div>
+    <div class="films" data-lens="時間"></div>
   </div>
 </section>
 
-<section class="slide" data-name="主題教學">
+<section class="slide" data-name="日常">
   <div class="inner">
-    <p class="label">02・第一學期・主題教學</p>
-    <h2>一個主題，從開始拍到完成<span class="accent">。</span></h2>
-    <div class="films" data-cat="主題教學"></div>
-  </div>
-</section>
-
-<section class="slide" data-name="學校生活">
-  <div class="inner">
-    <p class="label">02・第一學期・學校生活</p>
-    <h2>家長平常看不到的那幾個小時<span class="accent">。</span></h2>
-    <div class="films" data-cat="學校生活"></div>
+    <p class="label">02・第一學期・日常</p>
+    <h2>主題之外的每一天<span class="accent">。</span></h2>
+    <div class="films" data-lens="日常"></div>
   </div>
 </section>
 
@@ -390,14 +392,14 @@ var F=[
  {id:'bLiTj37EJMU',t:'我們在忙很多事',d:'3:43',p:1,c:'月度回顧',s:'2025.11'},
  {id:'P5uYLKxhIRI',t:'各自不同的價值',d:'7:34',p:1,c:'月度回顧',s:'2025.12'},
  {id:'QSZnQVYR8rw',t:'第一學期回顧',d:'6:04',p:1,c:'月度回顧',s:'2025.09–12'},
- {id:'59zoH9Dtzpk',t:'做自己的椅子',d:'5:35',p:1,c:'主題教學',s:'主題教學'},
- {id:'BSqwqJg5izo',t:'製作社區地圖',d:'2:52',p:1,c:'主題教學',s:'主題教學'},
- {id:'DmpENkqO0N0',t:'萬聖節夜宿學校',d:'5:50',p:1,c:'主題教學',s:'主題教學'},
- {id:'0Y_-fLmYCjE',t:'感恩節活動',d:'7:04',p:1,c:'主題教學',s:'主題教學',me:1},
- {id:'w_DPBM_FDtc',t:'聖誕節活動',d:'4:25',p:1,c:'主題教學',s:'主題教學',me:1},
- {id:'MYUTm33r6oE',t:'上課情形',d:'5:21',p:1,c:'學校生活',s:'學校生活'},
- {id:'4LuRzNHcGjc',t:'每天都要做的事',d:'2:01',p:1,c:'學校生活',s:'學校生活'},
- {id:'5kAc_Ky6t50',t:'運動與健身',d:'3:28',p:1,c:'學校生活',s:'學校生活'},
+ {id:'59zoH9Dtzpk',t:'做自己的椅子',d:'5:35',p:1,c:'主題教學',s:'主題'},
+ {id:'BSqwqJg5izo',t:'製作社區地圖',d:'2:52',p:1,c:'主題教學',s:'主題'},
+ {id:'DmpENkqO0N0',t:'萬聖節夜宿學校',d:'5:50',p:1,c:'主題教學',s:'主題'},
+ {id:'0Y_-fLmYCjE',t:'感恩節活動',d:'7:04',p:1,c:'主題教學',s:'主題',me:1},
+ {id:'w_DPBM_FDtc',t:'聖誕節活動當天',d:'4:25',p:1,c:'主題教學',s:'主題',me:1},
+ {id:'MYUTm33r6oE',t:'上課情形',d:'5:21',p:1,c:'學校生活',s:'日常'},
+ {id:'4LuRzNHcGjc',t:'每天都要做的事',d:'2:01',p:1,c:'學校生活',s:'日常'},
+ {id:'5kAc_Ky6t50',t:'運動與健身',d:'3:28',p:1,c:'學校生活',s:'日常'},
  {id:'2K6UTBvZkXg',t:'EP1. 了解流浪動物議題',d:'6:12',p:2,c:'影集',s:'影集'},
  {id:'ncyg2_orKUk',t:'EP2. 實際造訪收容所',d:'7:59',p:2,c:'影集',s:'影集',me:1},
  {id:'L3ykd1eQDLE',t:'EP3. 做專題研究',d:'8:53',p:2,c:'影集',s:'影集'},
@@ -407,19 +409,24 @@ var F=[
  {id:'fqkn19Wv9Ps',t:'參訪收容所',d:'2:29',p:2,c:'活動紀錄',s:'活動紀錄',me:1},
  {id:'ClEkeqY42kw',t:'期末發表會',d:'3:37',p:2,c:'活動紀錄',s:'活動紀錄',me:1}
 ];
+var LENS={'主題':['59zoH9Dtzpk','BSqwqJg5izo','DmpENkqO0N0','0Y_-fLmYCjE','P5uYLKxhIRI','w_DPBM_FDtc'],
+ '時間':['eeexnbX_BbI','ybJwiX1yMjw','bLiTj37EJMU','P5uYLKxhIRI','QSZnQVYR8rw'],
+ '日常':['MYUTm33r6oE','4LuRzNHcGjc','5kAc_Ky6t50']};
+var SX={'主題':{'P5uYLKxhIRI':'聖誕節（上）・準備到演出','w_DPBM_FDtc':'聖誕節（下）・活動當天'},'時間':{'P5uYLKxhIRI':'2025.12・整個月在準備聖誕節'}};
+function byIds(ids){return ids.map(function(id){return F.filter(function(f){return f.id===id;})[0];});}
 function yt(f){var l=f.p===1?PL1:(f.p===2?PL2:'');return 'https://www.youtube.com/watch?v='+f.id+(l?'&list='+l:'');}
 function img(id){return 'https://i.ytimg.com/vi/'+id+'/maxresdefault.jpg';}
-function tile(f){
+function tile(f,ctx){
   var b=document.createElement('button');b.type='button';b.className='film';b.dataset.id=f.id;
   b.innerHTML='<span class="th"><img alt="" loading="lazy" src="'+img(f.id)+'" onerror="this.onerror=null;this.src=\'https://i.ytimg.com/vi/'+f.id+'/hqdefault.jpg\'">'+(f.me?'<span class="me">含我到場拍攝</span>':'')+'<span class="tc">'+f.d+'</span><span class="pl"></span></span><span class="t"></span><span class="s"></span>';
-  b.querySelector('.t').textContent=f.t;b.querySelector('.s').textContent=f.s;
+  b.querySelector('.t').textContent=f.t;var sx=ctx&&SX[ctx]&&SX[ctx][f.id];b.querySelector('.s').textContent=sx||f.s;if(sx)b.querySelector('.s').classList.add('hl');
   b.addEventListener('click',function(){play(f);});
   return b;
 }
-function fill(el,list){list.forEach(function(f){el.appendChild(tile(f));});}
+function fill(el,list,ctx){list.forEach(function(f){el.appendChild(tile(f,ctx));});}
 document.querySelectorAll('#deck .films').forEach(function(el){
   if(el.dataset.ids) fill(el,F.filter(function(f){return el.dataset.ids.split(',').indexOf(f.id)>-1;}));
-  else if(el.dataset.cat) fill(el,F.filter(function(f){return f.c===el.dataset.cat;}));
+  else if(el.dataset.lens) fill(el,byIds(LENS[el.dataset.lens]),el.dataset.lens);
   else if(el.dataset.phase) fill(el,F.filter(function(f){return f.p==el.dataset.phase;}));
 });
 // cover mosaic
@@ -430,12 +437,14 @@ function secs(d){var a=d.split(':').map(Number);return a.length===2?a[0]*60+a[1]
 function fmt(s){var h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return (h?h+':'+String(m).padStart(2,'0'):m)+':'+String(x).padStart(2,'0');}
 (function(){
   var body=document.getElementById('ovBody');
-  var G=[{p:0,h:'成立之前',w:'2025',subs:['形象影片']},{p:1,h:'第一學期',w:'2025 秋',subs:['月度回顧','主題教學','學校生活']},{p:2,h:'第二學期',w:'2026 春',subs:['影集','活動紀錄']}];
+  var G=[{p:0,h:'成立之前',w:'2025',subs:['形象影片']},{p:1,h:'第一學期',w:'2025 秋',lens:['主題','時間','日常'],note:'12 月回顧同時列在主題與時間'},{p:2,h:'第二學期',w:'2026 春',subs:['影集','活動紀錄']}];
   var total=0;
   G.forEach(function(g){
     var list=F.filter(function(f){return f.p===g.p;});var t=list.reduce(function(a,f){return a+secs(f.d);},0);total+=t;
     var sec=document.createElement('section');sec.className='ov-group';
-    sec.innerHTML='<header><span class="label">'+g.w+'</span><h3>'+g.h+'</h3><span class="sum">'+list.length+' 支・'+fmt(t)+'</span></header>';
+    sec.innerHTML='<header><span class="label">'+g.w+'</span><h3>'+g.h+'</h3><span class="sum">'+list.length+' 支・'+fmt(t)+(g.note?'・'+g.note:'')+'</span></header>';
+    if(g.lens){g.lens.forEach(function(c){var sub=byIds(LENS[c]);var l=document.createElement('p');l.className='ov-sub';l.textContent=c+'・'+(c==='主題'?'5 個主題，':'')+sub.length+' 支';sec.appendChild(l);
+      var grid=document.createElement('div');grid.className='films';fill(grid,sub,c);sec.appendChild(grid);});body.appendChild(sec);return;}
     g.subs.forEach(function(c){var sub=list.filter(function(f){return f.c===c;});if(!sub.length)return;
       if(g.subs.length>1){var l=document.createElement('p');l.className='ov-sub';l.textContent=c+'・'+sub.length+' 支';sec.appendChild(l);}
       var grid=document.createElement('div');grid.className='films';fill(grid,sub);sec.appendChild(grid);});
