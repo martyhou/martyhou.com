@@ -465,6 +465,10 @@ footer.copy a{color:#111;font-weight:700;font-size:14px;cursor:pointer;text-deco
 .post-foot{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding-top:14px;font-size:14.5px;line-height:1.7;color:#555}
 .post-foot .go{font-weight:700;font-size:15.5px}
 .post-body p:last-child{margin-bottom:0}
+/* v44：語言切換 */
+.langsw{cursor:pointer}
+.toplinks .langsw{font-weight:400;color:#555;border-left:1px solid #111;padding-left:30px}
+.fabmenu .langsw{font-weight:400;color:#555}
 </style>
 </head>
 <body>
@@ -475,6 +479,7 @@ footer.copy a{color:#111;font-weight:700;font-size:14px;cursor:pointer;text-deco
     <a data-go="long">代表案例</a>
     <a data-go="common">製作項目</a>
     <a data-go="about">關於我／聯絡</a>
+    <a class="langsw" data-lang="en.html" lang="en">English</a>
   </div>
 </div></nav>
 
@@ -701,6 +706,7 @@ footer.copy a{color:#111;font-weight:700;font-size:14px;cursor:pointer;text-deco
   <a data-go="long">代表案例</a>
   <a data-go="common">製作項目</a>
   <a data-go="about">關於我／聯絡</a>
+  <a class="langsw" data-lang="en.html" lang="en">English</a>
 </div>
 <button class="fab" id="burger" type="button" aria-label="選單" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
 
@@ -804,6 +810,14 @@ document.addEventListener('click',function(ev){
   document.addEventListener('keydown',function(ev){if(ev.key==='Escape')set(false);});
   document.addEventListener('click',function(ev){if(!ev.target.closest('#menu'))set(false);});
 })();
+</script>
+<script>
+document.addEventListener('click',function(ev){
+  var a=ev.target.closest?ev.target.closest('[data-lang]'):null;if(!a)return;
+  ev.preventDefault();
+  var cur=document.querySelector('[data-page]:not([hidden])');
+  location.href=a.getAttribute('data-lang')+'#'+(cur?cur.getAttribute('data-page'):'home');
+});
 </script>
 </body>
 </html>
