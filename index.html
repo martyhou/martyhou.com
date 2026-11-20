@@ -444,12 +444,31 @@ ul.plain{margin-top:0}
 .intro{padding-top:14px}
 .intro .intro-lead{margin-bottom:1em}
 
+/* v39：電腦版上方導覽列；頁尾加聯絡我 */
+.toplinks{display:none}
+footer.copy .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+footer.copy a{color:#111;font-weight:700;font-size:14px;cursor:pointer;text-decoration:underline;text-underline-offset:4px;padding:10px 0}
+@media (min-width:901px){
+  nav{position:sticky;top:0;z-index:40}
+  .toplinks{display:flex;gap:30px;font-size:14.5px;font-weight:700}
+  .toplinks a{color:#111;text-decoration:none;cursor:pointer;padding:6px 0}
+  .toplinks a:hover{text-decoration:underline;text-underline-offset:6px}
+  .fab,.fabmenu{display:none !important}
+  section[id],.post,.ov-group,.intro{scroll-margin-top:76px}
+}
+@media (max-width:900px){footer.copy{padding-right:84px}}
+
 </style>
 </head>
 <body>
 
 <nav><div class="wrap">
   <a class="name" data-go="home">侯念宗 MARTY HOU｜影片企劃製作</a>
+  <div class="toplinks">
+    <a data-go="long">代表案例</a>
+    <a data-go="common">製作項目</a>
+    <a data-go="about">關於我／聯絡</a>
+  </div>
 </div></nav>
 
 <!-- ================= 首頁 ================= -->
@@ -668,7 +687,7 @@ ul.plain{margin-top:0}
 
 </div>
 
-<footer class="copy"><div class="wrap">© 2026 侯念宗 聯結影像</div></footer>
+<footer class="copy"><div class="wrap"><span>© 2026 侯念宗 聯結影像</span><a data-go="about" data-t="contact">聯絡我</a></div></footer>
 
 <div class="fabmenu" id="menu" hidden>
   <a data-go="home">首頁</a>
