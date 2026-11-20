@@ -458,6 +458,13 @@ footer.copy a{color:#111;font-weight:700;font-size:14px;cursor:pointer;text-deco
 }
 @media (max-width:900px){footer.copy{padding-right:84px}}
 
+/* v40：5IN 置頂加標籤 */
+.post .tag{display:inline-block;align-self:flex-start;background:#111;color:#fff;font-size:12.5px;font-weight:700;letter-spacing:.08em;padding:4px 10px;margin:0 0 14px}
+/* v42：5IN 貼文下方說明 */
+.post.has-foot > .thumb{margin-bottom:0;margin-top:14px}
+.post-foot{display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding-top:14px;font-size:14.5px;line-height:1.7;color:#555}
+.post-foot .go{font-weight:700;font-size:15.5px}
+.post-body p:last-child{margin-bottom:0}
 </style>
 </head>
 <body>
@@ -512,6 +519,16 @@ footer.copy a{color:#111;font-weight:700;font-size:14px;cursor:pointer;text-deco
 </div></div>
 
 <div class="feed"><div class="feedw">
+<article class="post has-foot fade" id="c-5in">
+  <span class="tag">完整系列規劃</span>
+  <header class="post-h"><img src="portrait.jpg" alt=""><div><h3>5IN 實驗教育機構｜一所新學校的完整系列</h3><span>前期形象影片，加上兩個學期的系列影片</span></div></header>
+  <div class="post-body" id="b-c-5in">
+    <p>22 支影片。其中八成的素材是老師和學生自己拍的，我到場拍關鍵的日子。</p>
+    <p>學期開始前，先問同一個問題：<br>要讓「誰」看？讓他看到「什麼」？</p>
+  </div>
+  <a class="thumb has t-a" href="https://www.youtube.com/watch?v=bjZU9xXtfDI" target="_blank" rel="noopener"><img src="home-assets/5in.jpg" alt=""><span class="cap">看片子｜5IN 實驗教育機構</span><span class="play">▶</span><span class="len">3:01</span></a>
+  <div class="post-foot"><span>這一支是前期的形象影片。</span><a class="go" href="https://martyhou.com/5in" target="_blank" rel="noopener">繼續了解兩個學期的完整規劃 →</a></div>
+</article>
 <article class="post fade" id="c-npm">
   <header class="post-h"><img src="portrait.jpg" alt=""><div><h3>故宮｜新住民文化導覽課程紀錄片</h3><span>國立故宮博物院委託｜2019 年開拍，2023 年上架</span></div></header>
   <div class="post-body clamp" id="b-c-npm">
@@ -571,20 +588,10 @@ footer.copy a{color:#111;font-weight:700;font-size:14px;cursor:pointer;text-deco
   <button class="more" type="button" aria-expanded="false" aria-controls="b-c-cpa">查看更多</button>
   <a class="thumb has t-c" href="https://www.youtube.com/watch?v=Vol4B4Ucc9g" target="_blank" rel="noopener"><img src="home-assets/cpa.jpg" alt=""><span class="cap">看片子｜會計師曾書薰</span><span class="play">▶</span><span class="len">2:54</span></a>
 </article>
-<article class="post fade" id="c-5in">
-  <header class="post-h"><img src="portrait.jpg" alt=""><div><h3>5IN 實驗教育機構｜一所新學校，連續三個學期</h3><span>從學校成立前開始，目前第三學期進行中</span></div></header>
-  <div class="post-body clamp" id="b-c-5in">
-    <p>22 支影片。其中八成的素材是老師和學生自己拍的，我到場拍關鍵的日子。</p>
-    <p>每個學期開始前，都先問同一個問題：現在要讓誰看懂什麼。所以三個學期做出來的東西都不一樣。</p>
-    <a class="go" href="https://martyhou.com/5in" target="_blank" rel="noopener">了解兩個學期的完整規劃 →</a>
-  </div>
-  <button class="more" type="button" aria-expanded="false" aria-controls="b-c-5in">查看更多</button>
-  <a class="thumb has t-a" href="https://www.youtube.com/watch?v=bjZU9xXtfDI" target="_blank" rel="noopener"><img src="home-assets/5in.jpg" alt=""><span class="cap">看片子｜5IN 實驗教育機構</span><span class="play">▶</span><span class="len">3:01</span></a>
-</article>
 <article class="post fade">
   <header class="post-h"><img src="portrait.jpg" alt=""><div><h3>CraftSoul 第二季｜公視 TaiwanPlus</h3><span>參與過的系列節目｜我是其中一個角色</span></div></header>
   <div class="post-body">
-    <p>台灣工藝職人的紀錄片系列。由有時電影公司主導，我負責攝影、撰稿企劃。</p>
+    <p>台灣工藝的英語人物誌節目。由有時電影公司主導，我參與攝影、撰稿企劃。</p>
     <a class="go" href="https://www.youtube.com/playlist?list=PLbSMhGhpYHH1qNKSONDbuGrdAt4-BU_sq" target="_blank" rel="noopener">看播放清單 →</a>
   </div>
   <a class="thumb has t-d" href="https://www.youtube.com/playlist?list=PLbSMhGhpYHH1qNKSONDbuGrdAt4-BU_sq" target="_blank" rel="noopener"><img src="home-assets/craft.jpg" alt=""><span class="cap">CraftSoul 第二季</span><span class="play">▶</span></a>
@@ -592,7 +599,7 @@ footer.copy a{color:#111;font-weight:700;font-size:14px;cursor:pointer;text-deco
 </div></div>
 
 <section class="cross"><div class="wrap narrow">
-  <p class="fade" style="margin:0 0 10px;color:var(--soft)">需求很清楚，只是要一支宣傳、介紹或活動紀錄？</p>
+  <p class="fade" style="margin:0 0 10px;color:var(--soft)">需求清楚，要一支宣傳、介紹或活動紀錄？</p>
   <a class="go fade" data-go="common">看製作項目 →</a>
 </div></section>
 
