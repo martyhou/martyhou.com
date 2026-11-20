@@ -3,21 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>侯念宗 Marty Hou｜影片製作</title>
+<title>侯念宗 Marty Hou｜影片企劃製作</title>
 <meta name="description" content="好好拍片子，好好做訪問，好好把事情講清楚。活動紀錄、人物訪談、宣傳影片、開場影片，以及紀錄片。">
-<meta property="og:title" content="侯念宗 Marty Hou｜影片製作">
+<meta property="og:title" content="侯念宗 Marty Hou｜影片企劃製作">
 <meta property="og:description" content="好好拍片子，好好做訪問，好好把事情講清楚。">
 <meta property="og:image" content="https://martyhou.com/home-assets/hero.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="portrait.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
 <style>
 :root{
-  --bg:#f5f2ec; --paper:#fcfaf6; --ink:#1d1b18; --soft:#5a544b; --faint:#8d867b;
-  --line:#dcd5c8; --accent:#8a4b2a; --dark:#211f1c; --dark2:#2d2a26;
+  --bg:#ffffff; --paper:#ffffff; --ink:#111111; --soft:#555555; --faint:#777777;
+  --line:#d6d6d6; --accent:#111111; --dark:#111111; --dark2:#2a2a2a;
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei","Heiti TC",system-ui,sans-serif;
+  font-family:"Noto Sans TC","Noto Sans CJK TC","PingFang TC","Microsoft JhengHei","Heiti TC",system-ui,sans-serif;
   font-size:17px;line-height:1.85;-webkit-font-smoothing:antialiased}
 .serif{font-family:"Noto Serif TC","Songti TC","PMingLiU",serif}
 a{color:inherit}
@@ -68,19 +71,30 @@ p{margin:0 0 1.1em}
 .thumb.has .cap{color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.7)}
 .thumb .cap,.thumb .play,.thumb .len{z-index:2}
 .thumb .soon{position:absolute;right:12px;bottom:14px;z-index:2;font-size:12px;background:rgba(0,0,0,.55);padding:1px 8px;color:#e9e3d8}
+.thumb.vert img.bg{filter:blur(16px) brightness(.55);transform:scale(1.25)}
+.thumb.vert img.fit{object-fit:contain}
 .thumb .play{position:absolute;left:16px;bottom:14px;width:38px;height:38px;border-radius:50%;border:1.5px solid rgba(255,255,255,.8);display:flex;align-items:center;justify-content:center;font-size:13px;padding-left:3px}
 .thumb .len{position:absolute;right:12px;bottom:14px;font-size:12.5px;background:rgba(0,0,0,.45);padding:1px 7px;letter-spacing:.04em}
 .thumb .cap{position:absolute;left:16px;top:14px;right:16px;font-size:13px;color:rgba(255,255,255,.72);line-height:1.5}
 .thumb:hover .play{background:#fff;color:#222}
 .t-a{--t1:#4a3a2c;--t2:#231c16}.t-b{--t1:#2f3b3d;--t2:#171d1e}.t-c{--t1:#3d3345;--t2:#1c1820}.t-d{--t1:#42402b;--t2:#1e1d14}.t-e{--t1:#3a2f2f;--t2:#1b1616}
 
-.kinds{display:grid;grid-template-columns:1fr 1fr;gap:44px 36px}
+.kinds{display:grid;grid-template-columns:minmax(0,1fr);gap:48px}
 .kind,.pair > *,.big > *,.three > *,.clist > *,.cards > *{min-width:0}
 .kind h3{font-size:22px;margin:0 0 4px}
 .kind > p{color:var(--soft);font-size:15.5px;margin:0 0 16px}
-.pair{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
-.pair .thumb .cap{font-size:12.5px}
-.pair.mix{grid-template-columns:repeat(4,minmax(0,1fr))}
+.pair{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.pair .thumb .cap{font-size:13.5px}
+.pair.mix{grid-template-columns:minmax(0,3.16fr) minmax(0,3.16fr) minmax(0,1fr) minmax(0,1fr);max-width:calc(75% + 3px)}
+.pair .thumb.has{aspect-ratio:auto;overflow:visible;background:none;color:var(--ink)}
+.pair .thumb.has img{bottom:auto;height:auto;aspect-ratio:16/9}
+.pair .thumb.has::before{display:none}
+.pair .thumb.has .cap{position:static;display:block;padding-top:calc(56.25% + 9px);color:var(--ink);text-shadow:none;font-size:14.5px;line-height:1.5}
+.pair .thumb.has .play{display:none}
+.pair .thumb.has .len{bottom:auto;top:0;margin-top:calc(56.25% - 30px);right:8px;color:#fff;background:rgba(0,0,0,.6)}
+.pair .thumb.has:hover img{filter:brightness(1.06)}
+.big .thumb.has::before,.case .thumb.has::before{background:none}
+.big .thumb.has .cap,.big .thumb.has .play,.case .thumb.has .cap,.case .thumb.has .play{display:none}
 .thumb.tall .len{right:6px;bottom:8px;font-size:11px;padding:0 5px}
 .thumb.tall{aspect-ratio:9/16}
 .thumb.tall .soon{left:8px;right:auto;bottom:8px;font-size:11px}
@@ -156,6 +170,9 @@ footer{padding:34px 0 60px;color:var(--faint);font-size:13.5px;border-top:1px so
   .hero .who{margin-bottom:32px}
   .heroimg{aspect-ratio:3/2;object-position:30% 20%;margin-bottom:36px}
   .doors,.kinds,.cards,.three,.clist{grid-template-columns:minmax(0,1fr)}
+  .pair{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pair.mix{grid-template-columns:repeat(2,minmax(0,1fr));max-width:none}
+  .pair.mix .thumb:not(.tall){grid-column:span 2}
   .door{padding:22px 0 24px}
   .door + .door{padding-left:0;border-left:0;border-top:1px solid #45413b}
   .big{grid-template-columns:minmax(0,1fr);gap:16px}
@@ -168,214 +185,317 @@ footer{padding:34px 0 60px;color:var(--faint);font-size:13.5px;border-top:1px so
   nav .links{gap:16px}
 }
 
+/* ===== v23：白底、黑字、粗黑體、直排 ===== */
+.serif{font-family:inherit}
+nav{background:rgba(255,255,255,.96);border-bottom:1px solid #111}
+nav .name{font-weight:700}
+nav .links{color:#111}
+nav .links a:hover{color:#111;text-decoration:underline;text-underline-offset:5px}
+.hero{background:#fff;color:#111;padding:56px 0 0}
+.hero .kicker{color:#111;font-weight:700;letter-spacing:.08em;font-size:13px;margin:0 0 28px}
+.herotop{display:flex;flex-direction:row-reverse;justify-content:space-between;align-items:flex-end;gap:48px;min-height:660px;margin:0 0 64px}
+.vert{display:flex;flex-direction:row-reverse;gap:40px;align-items:flex-start;align-self:flex-start}
+.hero h1{writing-mode:vertical-rl;margin:0;font-size:clamp(44px,5.4vw,66px);font-weight:700;line-height:1.45;letter-spacing:.04em;white-space:nowrap}
+.hero .who{writing-mode:vertical-rl;margin:0;max-width:none;font-size:15px;line-height:2.2;letter-spacing:.08em;color:#666;white-space:nowrap}
+.heroshot{margin:0;display:flex;gap:14px;align-items:flex-start;width:min(480px,44%)}
+.heroshot img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover}
+.heroshot figcaption{writing-mode:vertical-rl;font-size:12px;letter-spacing:.08em;color:#666;white-space:nowrap}
+.doors{border-top:1px solid #111}
+.door + .door{border-left:1px solid #111}
+.door small{color:#666}
+.door b{font-weight:700}
+.door span{color:#555}
+.door:hover b{color:#111;text-decoration:underline;text-underline-offset:6px}
+section + section{border-top:1px solid #111}
+h2{color:#111;font-weight:700;letter-spacing:.12em}
+.sec-title{font-weight:700}
+h3{font-weight:700}
+.kind h3{font-size:22px;letter-spacing:.06em}
+.pair{gap:34px 30px}
+.pair .thumb.has{display:grid;grid-template-columns:minmax(0,1fr) 48px;column-gap:12px;row-gap:6px;align-items:start}
+.pair .thumb.has img{position:static;grid-column:1;grid-row:1;width:100%;height:auto;aspect-ratio:16/9}
+.pair .thumb.has .cap{grid-column:2;grid-row:1;padding:0;writing-mode:vertical-rl;font-size:13.5px;line-height:1.75;letter-spacing:.08em;white-space:nowrap}
+.pair .thumb.has .cap i,.pair .thumb.has .cap b{display:block;font-style:normal;font-weight:500}
+.pair .thumb.has .cap i{color:#666;font-weight:400}
+.pair .thumb.has .len{position:static;grid-column:1;grid-row:2;margin:0;padding:0;background:none;color:#666;font-size:12px;letter-spacing:.08em}
+.t-a,.t-b,.t-c,.t-d,.t-e{--t1:#3a3a3a;--t2:#161616}
+.big{border-top:1px solid #111}
+.big:last-child{border-bottom:1px solid #111}
+.go{color:#111}
+.three{border-top:1px solid #111;border-bottom:1px solid #111}
+.three div + div{border-left:1px solid #111}
+.three b{font-weight:700}
+.contactband{color:#fff}
+.contactband h2{color:#fff}
+.contactband p{color:#cfcfcf}
+.clist{border-top:1px solid #555}
+.clist a + a{border-left:1px solid #555}
+.clist small{color:#aaa}
+.clist a:hover b{color:#fff;text-decoration:underline;text-underline-offset:5px}
+ul.plain li{border-bottom:1px solid #111}
+ul.plain li:first-child{border-top:1px solid #111}
+.pagehead{color:#fff}
+.pagehead .back,.pagehead p{color:#cfcfcf}
+.pagehead h1{font-weight:700}
+.case{border-top:1px solid #111}
+.q{border-left:3px solid #111}
+.record,.card,.hear span{border:1px solid #111}
+.say{color:#fff}
+.say .when{color:#bbb}
+.say button{color:#fff;border-color:#888}
+footer{border-top:1px solid #111}
+@media (max-width:760px){
+  .hero{padding-top:36px}
+  .herotop{flex-direction:column;align-items:stretch;min-height:0;gap:30px;margin-bottom:44px}
+  .vert{align-self:stretch;gap:22px}
+  .hero h1{font-size:36px;line-height:1.5}
+  .hero .who{font-size:13.5px}
+  .heroshot{width:100%;flex-direction:column;gap:8px}
+  .heroshot figcaption{writing-mode:horizontal-tb}
+  .pair{grid-template-columns:minmax(0,1fr);gap:30px}
+  .door + .door{border-left:0;border-top:1px solid #111}
+  .three div + div{border-left:0;border-top:1px solid #111}
+  .clist a + a{border-left:0;border-top:1px solid #555}
+}
+
+/* ===== v24：首頁變短，兩個入口換頁 ===== */
+.herotop{min-height:600px;margin-bottom:56px}
+.doors{border-top:0;gap:30px;padding-bottom:76px}
+.door,.door + .door{padding:0;border:0}
+.door img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;margin:0 0 16px}
+.door small{margin-bottom:4px}
+.door b{font-size:22px}
+.door:hover img{filter:brightness(1.06)}
+.pagehead h1{writing-mode:horizontal-tb}
+.cross{padding:54px 0}
+.cross .go{font-size:18px;font-weight:700}
+@media (max-width:760px){
+  .doors{gap:36px;padding-bottom:54px}
+  .door,.door + .door{padding:0;border:0}
+}
+
+/* ===== v25：只有首頁標語直排，其他全部橫排；影片在頁面裡播 ===== */
+.herotop{align-items:stretch;gap:56px;min-height:0}
+.heroleft{flex:1;min-width:0;max-width:560px;display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+.hero .who{writing-mode:horizontal-tb;white-space:normal;font-size:16px;line-height:1.95;letter-spacing:0;color:#555}
+.heroshot{width:100%;flex-direction:column;gap:8px}
+.heroshot figcaption{writing-mode:horizontal-tb;letter-spacing:.04em}
+.pair{gap:30px 22px}
+.pair .thumb.has{display:block;position:relative}
+.pair .thumb.has img{display:block;width:100%;height:auto;aspect-ratio:16/9}
+.pair .thumb.has .cap{display:block;writing-mode:horizontal-tb;white-space:normal;padding:10px 0 0;font-size:14.5px;line-height:1.5;letter-spacing:0}
+.pair .thumb.has .cap i,.pair .thumb.has .cap b{display:inline;font-weight:500;color:#111}
+.pair .thumb.has .cap i{color:#666;font-weight:400}
+.pair .thumb.has .cap i::after{content:"｜";color:#bbb}
+.pair .thumb.has .len{position:absolute;top:0;right:8px;bottom:auto;margin-top:calc(56.25% - 30px);padding:1px 7px;background:rgba(0,0,0,.65);color:#fff;font-size:12px;letter-spacing:.04em}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.9);display:flex;align-items:center;justify-content:center;padding:56px 16px 24px}
+.lb[hidden]{display:none}
+.lb-box{width:min(1100px,100%);display:flex;flex-direction:column;gap:12px}
+.lb-frame{position:relative;width:100%;aspect-ratio:16/9;background:#000;max-height:calc(100vh - 140px)}
+.lb.tall .lb-box{width:min(420px,100%)}
+.lb.tall .lb-frame{aspect-ratio:9/16;margin:0 auto;width:auto;height:calc(100vh - 140px);max-width:100%}
+.lb-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.lb-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;color:#fff;font-size:14px}
+.lb-bar a{color:#cfcfcf;text-underline-offset:4px;white-space:nowrap}
+.lb-x{position:absolute;top:8px;right:10px;width:44px;height:44px;border:0;background:transparent;color:#fff;font-size:30px;line-height:1;cursor:pointer}
+@media (max-width:760px){
+  .herotop{flex-direction:column;gap:26px}
+  .hero h1{align-self:flex-end}
+  .heroleft{max-width:none;gap:26px}
+  .hero .who{font-size:15.5px}
+  .pair{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 14px}
+  .pair .thumb.has .cap{font-size:13.5px}
+  .pair .thumb.has .cap i{display:block}
+  .pair .thumb.has .cap i::after{content:""}
+  .pair .thumb.has .len{font-size:11px;right:6px;margin-top:calc(56.25% - 26px)}
+}
+
+/* ===== v26：大片頁像一篇篇貼文；小片頁像 5IN 的總覽 ===== */
+:root{--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace}
+.pagehead{background:#fff;color:#111;border-bottom:1px solid #111;padding:40px 0 34px}
+.pagehead .back,.pagehead p{color:#555}
+.feedw{max-width:640px;margin:0 auto;padding:0 16px}
+.feed{background:#eeeeee;padding:20px 0 36px}
+.post{background:#fff;border-radius:8px;margin:0 0 16px;padding:18px 20px 20px;scroll-margin-top:70px;overflow:hidden}
+.post-h{display:flex;gap:12px;align-items:center;margin:0 0 14px}
+.post-h img{width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:50% 20%;flex:none}
+.post-h b{display:block;font-size:15px;font-weight:700;line-height:1.4}
+.post-h span{display:block;font-size:13px;color:#666;line-height:1.5}
+.post h3{font-size:19px;margin:0 0 8px;line-height:1.5}
+.post-body{font-size:16px;line-height:1.8}
+.post-body p{margin:0 0 .8em}
+.post-body .post-lead{font-size:19px;font-weight:700;line-height:1.7}
+.post-body.clamp > *:not(:first-child){display:none}
+.post-body.clamp > :first-child{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;margin-bottom:0}
+.post .more{display:block;border:0;background:none;padding:10px 0;margin:0 0 4px;font:inherit;font-size:15px;font-weight:700;color:#555;cursor:pointer;min-height:44px}
+.post .more:hover{color:#111;text-decoration:underline;text-underline-offset:4px}
+.post > .thumb{margin:6px -20px -20px}
+.post > .thumb.has::before{background:none}
+.post > .thumb .cap,.post > .thumb .play{display:none}
+.post > .thumb:not(.has) .cap{display:block}
+.post .acts{margin:4px 0 12px}
+.post .record{margin:12px 0 4px}
+.ov{padding:44px 0 70px}
+.ov-head{display:grid;gap:14px;border-bottom:1px solid #111;padding-bottom:28px;margin-bottom:40px}
+.ov-head .back{font-size:14px;color:#555;text-decoration:none;cursor:pointer}
+.ov-head .label{margin:8px 0 0;font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:#555}
+.ov-head h1{margin:0;font-size:clamp(30px,3.6vw,52px);font-weight:700;line-height:1.3}
+.ov-lead{margin:0;color:#555;max-width:36em}
+.stats{display:flex;flex-wrap:wrap;gap:14px 40px;margin-top:8px}
+.stat b{display:block;font-family:var(--mono);font-size:clamp(28px,3.2vw,44px);font-weight:600;line-height:1.1}
+.stat.key b{font-size:clamp(40px,4.6vw,64px)}
+.stat span{font-size:15px;color:#666}
+.ov-group{display:grid;gap:12px;margin:0 0 48px;padding:0;border:0 !important}
+.ov-group > header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 18px}
+.ov-group h3{margin:0;font-size:clamp(22px,2.2vw,30px)}
+.ov-group .sum{font-family:var(--mono);font-size:13.5px;color:#666}
+.ov-desc{margin:0 0 6px;color:#555;font-size:15.5px}
+.films{display:grid;gap:22px 18px;grid-template-columns:repeat(4,minmax(0,1fr))}
+.film{display:block;text-decoration:none;color:#111;min-width:0}
+.film .th{position:relative;display:block;aspect-ratio:16/9;overflow:hidden;background:#eee;border:1px solid #d6d6d6}
+.film img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.film:hover img{transform:scale(1.04)}
+.film .tc{position:absolute;right:8px;bottom:8px;font-family:var(--mono);font-size:12.5px;background:rgba(10,10,12,.78);color:#fff;padding:2px 8px}
+.film .t{display:block;margin-top:9px;font-weight:700;font-size:16px;line-height:1.4}
+.film .s{display:block;font-family:var(--mono);font-size:12.5px;color:#666;margin-top:2px}
+@media (max-width:1000px){.films{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:760px){
+  .feedw{padding:0 10px}
+  .feed{padding:12px 0 24px}
+  .post{padding:16px 16px 18px;margin-bottom:12px}
+  .post > .thumb{margin:6px -16px -18px}
+  .films{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 12px}
+  .film .t{font-size:14.5px}
+  .ov{padding:28px 0 50px}
+}
+
+/* ===== v27：漢堡選單、關於獨立一頁 ===== */
+.burger{display:none;width:44px;height:44px;margin-right:-10px;border:0;background:none;padding:0;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.burger span{display:block;width:24px;height:2px;background:#111;transition:transform .2s,opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+@media (max-width:900px){
+  .burger{display:flex}
+  nav .links{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid #111;flex-direction:column;gap:0;padding:6px 22px 14px;overflow:visible;white-space:normal;font-size:18px;font-weight:700;color:#111}
+  nav .links.open{display:flex}
+  nav .links a{padding:14px 0;border-bottom:1px solid #d6d6d6}
+  nav .links a:last-child{border-bottom:0}
+}
+
+/* v28：首頁拿掉兩個圖片入口 */
+.herotop{margin-bottom:76px}
+@media (max-width:760px){.herotop{margin-bottom:54px}}
+
+/* v29：頁尾網站地圖 */
+footer.sitemap{padding:44px 0 56px;border-top:1px solid #111;color:#555;font-size:14.5px;background:#fff}
+.sm{display:grid;grid-template-columns:1.3fr 1.2fr 1fr 1.2fr;gap:28px}
+.sm > div{display:flex;flex-direction:column;gap:2px;min-width:0}
+.sm a{color:#555;text-decoration:none;padding:5px 0;cursor:pointer;word-break:break-all}
+.sm a:hover{color:#111;text-decoration:underline;text-underline-offset:4px}
+.sm .sm-h,.sm .sm-name{color:#111;font-weight:700;font-size:15.5px;margin-bottom:4px}
+.sm-me span{padding:2px 0}
+@media (max-width:760px){
+  .sm{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 20px}
+  .sm-me,.sm > div:last-child{grid-column:1 / -1}
+  .sm a{padding:8px 0}
+}
+
+/* ===== v30：右下角功能點當選單；聯絡只在關於頁；沒有頁尾 ===== */
+nav{position:static}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.fab{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:50;width:54px;height:54px;border-radius:50%;border:0;background:#111;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.fab span{display:block;width:22px;height:2px;background:#fff;transition:transform .2s,opacity .2s}
+.fab[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.fab[aria-expanded="true"] span:nth-child(2){opacity:0}
+.fab[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.fabmenu{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(84px + env(safe-area-inset-bottom,0px));z-index:50;min-width:200px;background:#fff;border:1px solid #111;box-shadow:0 4px 18px rgba(0,0,0,.18);display:flex;flex-direction:column;padding:4px 18px}
+.fabmenu[hidden]{display:none}
+.fabmenu a{padding:13px 0;font-size:17px;font-weight:700;color:#111;text-decoration:none;cursor:pointer;border-bottom:1px solid #d6d6d6}
+.fabmenu a:last-child{border-bottom:0}
+.fabmenu a:hover{text-decoration:underline;text-underline-offset:5px}
+.ov{padding-top:36px}
+section[id],.post,.ov-group{scroll-margin-top:16px}
+[data-page]{padding-bottom:40px}
+[data-page="about"]{padding-bottom:0}
+
+/* v31 */
+nav .name{letter-spacing:.08em;font-size:14px}
+.hero{padding-top:64px}
+footer.copy{padding:26px 0 30px;border-top:1px solid #111;color:#555;font-size:13px;background:#fff}
+[data-page]{padding-bottom:0}
+@media (max-width:760px){.hero{padding-top:40px}}
+/* v32：代表案例，引言不用貼文格式 */
+[data-page="long"] .pagehead{border-bottom:0;padding-bottom:6px}
+.intro{background:#fff;padding:26px 0 40px;border-bottom:1px solid #111;scroll-margin-top:16px}
+.intro h2{margin:0 0 14px}
+.intro p{margin:0 0 .9em;font-size:16.5px;line-height:1.85}
+.intro .intro-lead{font-size:clamp(19px,3vw,22px);font-weight:700;line-height:1.75;margin-bottom:.8em}
+.intro p:last-child{margin-bottom:0}
+
+/* v33 */
+ul.plain li,ul.plain li:first-child{border:0;padding:0 0 .9em}
+ul.plain{margin-top:0}
+.fab{border:1.5px solid #fff}
+/* v35 */
+.post-h{align-items:flex-start}
+.post-h h3{margin:0 0 2px;font-size:17.5px;line-height:1.45}
+.post-h img{margin-top:2px}
+.intro{padding-top:14px}
+.intro .intro-lead{margin-bottom:1em}
+
 </style>
 </head>
 <body>
 
 <nav><div class="wrap">
-  <a class="name" data-go="home">侯念宗 Marty Hou</a>
-  <div class="links">
-    <a data-go="home" data-t="common">常做的</a>
-    <a data-go="home" data-t="long">花時間做的</a>
-    <a data-go="deep">案子的經過</a>
-    <a data-go="deep" data-t="refer">介紹人給我</a>
-    <a data-go="home" data-t="contact">聯絡</a>
-  </div>
+  <a class="name" data-go="home">侯念宗 MARTY HOU｜影片企劃製作</a>
 </div></nav>
 
 <!-- ================= 首頁 ================= -->
 <div data-page="home">
 
 <header class="hero"><div class="wrap">
-  <p class="kicker fade">侯念宗 MARTY HOU｜影片製作</p>
-  <h1 class="serif fade">好好拍片子，<br>好好做訪問，<br>好好把事情講清楚。</h1>
-  <p class="who fade">活動紀錄、人物訪談、宣傳影片、開場影片，是我每個月都在做的。<br>花上幾個月的紀錄片，我也做。<br>通常是兩三個人的小團隊。</p>
-  <img class="heroimg fade" src="home-assets/hero.jpg" alt="侯念宗在拍攝現場聽對方說話">
-  <div class="doors fade">
-    <a class="door" data-go="home" data-t="common">
-      <small>大部分狀況</small>
-      <b>直接的需求 →</b>
-      <span>要拍一場活動、做幾支訪談、一支宣傳或開場影片。</span>
-    </a>
-    <a class="door" data-go="home" data-t="long">
-      <small>少數時候</small>
-      <b>需要把事情講清楚 →</b>
-      <span>還不確定要拍什麼，或者一支片講不完。</span>
-    </a>
+  <div class="herotop">
+    <h1 class="fade">好好拍片子，<br>好好做訪問，<br>好好把事情講清楚。</h1>
+    <div class="heroleft">
+      <p class="who fade">宣傳、介紹、活動紀錄，是我平常在做的。<br>花上幾個月的紀錄片，我也做。</p>
+      <figure class="heroshot fade">
+        <img src="home-assets/hero.jpg" alt="侯念宗在拍攝現場聽對方說話">
+        <figcaption>2018 年，訪談現場。</figcaption>
+      </figure>
+    </div>
   </div>
 </div></header>
-
-<section id="common"><div class="wrap">
-  <h2 class="fade">常做的</h2>
-  <p class="sec-title serif fade">需求清楚，做法直接。</p>
-  <p class="sec-lead fade">這四種是我最常接的。把該拍的拍到，剪得乾淨、好看、有質感。</p>
-
-  <div class="kinds">
-    <div class="kind fade">
-      <h3>活動紀錄</h3>
-      <p>講座、發表會、工作坊、營隊。</p>
-      <div class="pair">
-        <a class="thumb has t-a" href="https://www.youtube.com/watch?v=pL923j0IlT4" target="_blank" rel="noopener"><img src="home-assets/ev1.jpg" alt=""><span class="cap">醫療品牌新品發表</span><span class="play">▶</span><span class="len">2:51</span></a>
-      </div>
-    </div>
-    <div class="kind fade">
-      <h3>人物訪談、見證</h3>
-      <p>請客戶、學員或專業人士，用自己的話講。</p>
-      <div class="pair">
-        <a class="thumb has t-a" href="https://www.youtube.com/watch?v=JLa5NyH24o0" target="_blank" rel="noopener"><img src="home-assets/iv1.jpg" alt=""><span class="cap">牙醫師訪談</span><span class="play">▶</span><span class="len">0:59</span></a>
-      </div>
-    </div>
-    <div class="kind fade">
-      <h3>宣傳影片</h3>
-      <p>店家、新產品。橫式、直式都做。</p>
-      <div class="pair mix">
-        <a class="thumb has t-c tall" href="https://youtube.com/shorts/GkSH1Rt_zjE" target="_blank" rel="noopener"><img src="home-assets/hong.jpg" alt=""><span class="cap">咖啡店｜直式</span><span class="len">0:46</span></a>
-        <a class="thumb has t-c tall" href="https://youtube.com/shorts/lLWoWkiSBGo" target="_blank" rel="noopener"><img src="home-assets/hong2.jpg" alt=""><span class="cap">咖啡豆｜直式</span><span class="len">0:53</span></a>
-      </div>
-    </div>
-    <div class="kind fade">
-      <h3>大會開場影片</h3>
-      <p>年會、大會、典禮一開始播的那一支。</p>
-      <div class="pair">
-        <a class="thumb has t-a" href="https://youtu.be/IfG4BxUCgAY" target="_blank" rel="noopener"><img src="home-assets/op1.jpg" alt=""><span class="cap">牙科大會開場影片</span><span class="play">▶</span><span class="len">2:13</span></a>
-        
-      </div>
-    </div>
-  </div>
-
-
-</div></section>
-
-<section id="long"><div class="wrap">
-  <h2 class="fade">花時間做的</h2>
-  <p class="sec-title serif fade">有些事，需要更多工夫講清楚。</p>
-  <p class="sec-lead fade">一個人、一門課、一個計畫、一所剛成立的學校。這幾支片是這樣做出來的，每一支我都寫下了經過。</p>
-
-  <div class="bigs">
-    <div class="big fade">
-      <a class="thumb has t-d" href="https://www.youtube.com/watch?v=0tPH7QwCmfE" target="_blank" rel="noopener"><img src="home-assets/npm.jpg" alt=""><span class="cap">故宮｜新住民導覽課程</span><span class="play">▶</span></a>
-      <div>
-        <h3>故宮｜新住民導覽課程紀錄片</h3>
-        <p>找不到主角的時候，我問了一個跟片子沒什麼關係的問題。</p>
-        <div class="acts"><a class="go" data-go="deep" data-t="c-npm">看經過 →</a></div>
-      </div>
-    </div>
-    <div class="big fade">
-      <a class="thumb has t-e" href="https://www.youtube.com/watch?v=GVRglkgLWFk" target="_blank" rel="noopener"><img src="home-assets/art.jpg" alt=""><span class="cap">兩廳院《藝術出走》</span><span class="play">▶</span><span class="len">5:24</span></a>
-      <div>
-        <h3>兩廳院《藝術出走》</h3>
-        <p>第一版盡量拍得漂亮，窗口說張力不夠。第二版，我試著把一些困難跟挑戰放進去。</p>
-        <div class="acts"><a class="go" data-go="deep" data-t="c-art">看經過 →</a></div>
-      </div>
-    </div>
-    <div class="big fade">
-      <a class="thumb has t-b" href="https://www.youtube.com/watch?v=bgw1i_q4Qks" target="_blank" rel="noopener"><img src="home-assets/sang.jpg" alt=""><span class="cap">桑布伊｜根之章</span><span class="play">▶</span><span class="len">2:04</span></a>
-      <div>
-        <h3>桑布伊演唱會｜三支短片</h3>
-        <p>原本只安排拍一場分享會。我去打聽，找到了一段清唱。</p>
-        <div class="acts"><a class="go" data-go="deep" data-t="c-sang">看經過 →</a></div>
-      </div>
-    </div>
-    <div class="big fade">
-      <a class="thumb has t-a" href="https://www.youtube.com/watch?v=bjZU9xXtfDI" target="_blank" rel="noopener"><img src="home-assets/5in.jpg" alt=""><span class="cap">5IN 實驗教育機構</span><span class="play">▶</span><span class="len">3:01</span></a>
-      <div>
-        <h3>5IN 實驗教育機構｜三個學期，22 支影片</h3>
-        <p>每個學期開始前，先問同一個問題：現在要讓誰看懂什麼。</p>
-        <div class="acts"><a class="go" href="https://martyhou.com/5in" target="_blank" rel="noopener">看完整經過 →</a></div>
-      </div>
-    </div>
-    <div class="big fade">
-      <a class="thumb has t-c" href="https://www.youtube.com/watch?v=Vol4B4Ucc9g" target="_blank" rel="noopener"><img src="home-assets/cpa.jpg" alt=""><span class="cap">會計師曾書薰</span><span class="play">▶</span><span class="len">2:54</span></a>
-      <div>
-        <h3>會計師曾書薰｜一個人的專業</h3>
-        <p>訪談時我注意到她辦公室那道很高的樓梯。片子的方向是從那裡來的。</p>
-        <div class="acts"><a class="go" data-go="deep" data-t="c-cpa">看經過 →</a></div>
-      </div>
-    </div>
-  </div>
-
-  <h3 class="fade" style="margin:54px 0 6px">參與過的系列節目</h3>
-  <p class="fade" style="color:var(--soft);margin:0 0 6px">這兩個不是我一個人做的，我是其中一個角色。</p>
-  <div class="bigs">
-    <div class="big fade">
-      <a class="thumb has t-d" href="https://www.youtube.com/playlist?list=PLbSMhGhpYHH1qNKSONDbuGrdAt4-BU_sq" target="_blank" rel="noopener"><img src="home-assets/craft.jpg" alt=""><span class="cap">CraftSoul 第二季</span><span class="play">▶</span></a>
-      <div>
-        <h3>CraftSoul 第二季｜公視 TaiwanPlus</h3>
-        <p>台灣工藝職人的紀錄片系列。由有時電影公司主導，我負責攝影、撰稿企劃。</p>
-        <div class="acts"><a class="go" href="https://www.youtube.com/playlist?list=PLbSMhGhpYHH1qNKSONDbuGrdAt4-BU_sq" target="_blank" rel="noopener">看播放清單 →</a></div>
-      </div>
-    </div>
-    <div class="big fade">
-      <a class="thumb t-b" href="https://www.youtube.com/playlist?list=PLWUMcFf60glAJhQxzPuh9ESdWp9fnqV_2" target="_blank" rel="noopener"><span class="cap">同行神隊友</span><span class="play">▶</span></a>
-      <div>
-        <h3>同行神隊友｜伊甸基金會</h3>
-        <p>伊甸對內的福音節目，合作了好幾季。到各地的據點採訪工作同仁。</p>
-        <div class="acts"><a class="go" href="https://www.youtube.com/playlist?list=PLWUMcFf60glAJhQxzPuh9ESdWp9fnqV_2" target="_blank" rel="noopener">看播放清單 →</a></div>
-      </div>
-    </div>
-  </div>
-</div></section>
 
 <section id="fit"><div class="wrap">
   <h2 class="fade">怎麼配合</h2>
   <div class="three fade" style="margin-top:22px">
     <div><b>小團隊製作</b><span>注重彈性與機動。</span></div>
-    <div><b>一支或長期</b><span>可以只做一支，也可以一學期、一整年配合。</span></div>
-    <div><b>你們的素材也能用</b><span>手機、相機拍的都可以，不一定要出動攝影組。</span></div>
-  </div>
-</div></section>
-
-<section id="contact" class="contactband"><div class="wrap">
-  <h2 class="fade">聯絡</h2>
-  <p class="fade" style="margin:6px 0 0">Email 優先。</p>
-  <div class="clist fade">
-    <a href="mailto:martyhou@martyhou.com"><small>EMAIL</small><b>martyhou@martyhou.com</b></a>
-    <a href="tel:0911411193"><small>電話</small><b>0911-411-193</b></a>
-    <a href="https://www.youtube.com/@marty_hou" target="_blank" rel="noopener"><small>YOUTUBE</small><b>@marty_hou</b></a>
-  </div>
-</div></section>
-
-<section id="about"><div class="wrap narrow">
-  <h2 class="fade">關於</h2>
-  <div class="about fade" style="margin-top:22px">
-    <img src="portrait.jpg" alt="侯念宗">
-    <div>
-      <p>侯念宗，Marty。聯結影像有限公司。做影片 10 年，以訪談和紀錄類的片子為主。</p>
-      <p>有的客戶說我很會問問題。</p>
-      <ul class="plain">
-        <li>學攝影的時候，把一整本教科書從頭拍到尾，因此得到跟老師合作的機會。</li>
-        <li>問過一個別人覺得不用問的小問題。那支片後來拿到國際獎，就是上面故宮那一支。</li>
-        <li>其實我真的很多都不懂，但這樣好像比較好。</li>
-      </ul>
-      <p class="pending" style="margin-top:18px">想把我介紹給別人？<a class="go" data-go="deep" data-t="refer">這裡有可以直接複製的說法</a></p>
-    </div>
+    <div><b>一支或長期</b><span>可以只做一支，也可以一整年、一學期、長期配合。</span></div>
+    <div><b>彈性活用各種素材</b><span>客戶的手機、相機拍的也可以，不一定要出動攝影組。</span></div>
   </div>
 </div></section>
 
 </div>
 
-<!-- ================= 深入頁 ================= -->
-<div data-page="deep" hidden>
+<!-- ================= 代表案例 ================= -->
+<div data-page="long" hidden>
 
-<div class="pagehead"><div class="wrap narrow">
+<div class="pagehead"><div class="wrap feedw">
   <a class="back" data-go="home">← 回首頁</a>
-  <h1 class="serif">案子的經過</h1>
-  <p>花時間做的那幾支，我問了什麼、聽到什麼、後來改了什麼。</p>
+  <h1>代表案例</h1>
 </div></div>
 
-<section id="how"><div class="wrap narrow">
-  <h2 class="fade">遇到難講清楚的事，我怎麼做</h2>
-  <p class="lead serif fade" style="margin-top:20px">我會把自己當作什麼都不懂。<br>多笨的問題我都會問，問到我自己滿意為止。</p>
-  <p class="fade">然後我會想兩件事。一件是，什麼內容是只有你才講得出來的。另一件是，你想講給他聽的那些人，會對哪裡感興趣、會被什麼打動。</p>
-  <p class="fade">想清楚了，我才開始做影片。</p>
-</div></section>
+<div class="intro" id="how"><div class="feedw">
+  <p class="intro-lead fade">遇到必須好好交代的事情，<br>我會當作自己什麼都不懂。<br>不管問題多笨，我都會問。</p>
+  <p class="fade">接著，我會想兩件事：<br>什麼事情，是只有你才講得出來的？<br>你想講給他聽的人，會對哪裡感興趣、會被什麼打動？</p>
+</div></div>
 
-<section id="cases" style="padding-top:0;border-top:0"><div class="wrap narrow">
-
-  <article class="case fade" id="c-npm">
-    <a class="thumb has t-d" href="https://www.youtube.com/watch?v=0tPH7QwCmfE" target="_blank" rel="noopener"><img src="home-assets/npm.jpg" alt=""><span class="cap">看片子｜故宮 新住民文化導覽課程紀錄片</span><span class="play">▶</span></a>
-    <h3>故宮｜新住民文化導覽課程紀錄片</h3>
-    <p class="meta">國立故宮博物院委託｜2019 年開拍，2023 年上架</p>
+<div class="feed"><div class="feedw">
+<article class="post fade" id="c-npm">
+  <header class="post-h"><img src="portrait.jpg" alt=""><div><h3>故宮｜新住民文化導覽課程紀錄片</h3><span>國立故宮博物院委託｜2019 年開拍，2023 年上架</span></div></header>
+  <div class="post-body clamp" id="b-c-npm">
     <p>我一直找不到片子的主角。我心裡覺得要有個主角才會好看，不然就只是一般的活動紀錄。</p>
     <p>後來主辦方介紹了一位住在彰化的越南學員。為了上課，她清晨四五點就得出門，有時前一天就先上台北過夜。</p>
     <p>我寒暄兩句，問了一個對片子其實沒什麼意義的問題：</p>
@@ -383,24 +503,26 @@ footer{padding:34px 0 60px;color:var(--faint);font-size:13.5px;border-top:1px so
     <p>她忽然哭了。她說家鄉來的其他姊妹都笑她，有這時間不如拿去賺錢。但她就是很喜歡學習。</p>
     <p>我就找到了主角。</p>
     <div class="record"><b>紀錄</b>休士頓國際影展 紀錄片銀獎、成人教育金獎</div>
-  </article>
-
-  <article class="case fade" id="c-art">
-    <a class="thumb has t-e" href="https://www.youtube.com/watch?v=GVRglkgLWFk" target="_blank" rel="noopener"><img src="home-assets/art.jpg" alt=""><span class="cap">看片子｜對他們來說，藝術是服務業</span><span class="play">▶</span><span class="len">5:24</span></a>
-    <h3>兩廳院《藝術出走》｜對他們來說，藝術是服務業</h3>
-    <p class="meta">推廣計畫紀錄片</p>
+  </div>
+  <button class="more" type="button" aria-expanded="false" aria-controls="b-c-npm">查看更多</button>
+  <a class="thumb has t-d" href="https://www.youtube.com/watch?v=0tPH7QwCmfE" target="_blank" rel="noopener"><img src="home-assets/npm.jpg" alt=""><span class="cap">看片子｜故宮 新住民文化導覽課程紀錄片</span><span class="play">▶</span></a>
+</article>
+<article class="post fade" id="c-art">
+  <header class="post-h"><img src="portrait.jpg" alt=""><div><h3>兩廳院《藝術出走》｜對他們來說，藝術是服務業</h3><span>推廣計畫紀錄片</span></div></header>
+  <div class="post-body clamp" id="b-c-art">
     <p>這是我第一次接到規模比較大的客戶，很緊張，也很看重。</p>
     <p>我們分好幾週去了好幾個地方拍。第一版，我用了當時最好的技術，挑情緒最飽滿、畫面最美、表情最生動的鏡頭，盡量漂亮、盡量好看。</p>
     <p>片子交出去，窗口回覆：張力不夠。</p>
     <p>這句話很抽象，我想了很久。後來想到，如果是一個故事，一定有困難，也有克服。</p>
     <p>於是我在片子一開始放進了質疑、矛盾和困難，那些我以前覺得業主不會喜歡的東西。後面才放執行單位是怎麼克服的、用的是什麼理念。</p>
     <div class="record"><b>紀錄</b>對方回覆，贊助商看了很感動，決定加碼贊助，並拉長贊助時間。</div>
-  </article>
-
-  <article class="case fade" id="c-sang">
-    <a class="thumb has t-b" href="https://www.youtube.com/watch?v=bgw1i_q4Qks" target="_blank" rel="noopener"><img src="home-assets/sang.jpg" alt=""><span class="cap">看片子｜根之章</span><span class="play">▶</span><span class="len">2:04</span></a>
-    <h3>桑布伊演唱會｜根、幹、葉三部曲</h3>
-    <p class="meta">兩廳院｜演唱會前的三支短片</p>
+  </div>
+  <button class="more" type="button" aria-expanded="false" aria-controls="b-c-art">查看更多</button>
+  <a class="thumb has t-e" href="https://www.youtube.com/watch?v=GVRglkgLWFk" target="_blank" rel="noopener"><img src="home-assets/art.jpg" alt=""><span class="cap">看片子｜對他們來說，藝術是服務業</span><span class="play">▶</span><span class="len">5:24</span></a>
+</article>
+<article class="post fade" id="c-sang">
+  <header class="post-h"><img src="portrait.jpg" alt=""><div><h3>桑布伊演唱會｜根、幹、葉三部曲</h3><span>兩廳院｜演唱會前的三支短片</span></div></header>
+  <div class="post-body clamp" id="b-c-sang">
     <p>窗口說要辦演唱會了，希望做一些片子。但當時安排好的拍攝，只有一場他的歌唱分享會。</p>
     <p>我判斷，只拍一場分享會，做不成宣傳片。</p>
     <p>我去打聽，發現行前還有一場記者會，他會在現場清唱一段。我覺得這很重要，就把那段清唱錄了下來。</p>
@@ -408,15 +530,17 @@ footer{padding:34px 0 60px;color:var(--faint);font-size:13.5px;border-top:1px so
     <p>窗口看了，建議把一支擴充成三支，用一棵樹來命名。根，講他為什麼唱歌。幹，放他的演出，讓人聽見他的聲音。葉，講他想去哪裡：他想用歌把原住民的文化介紹出去。</p>
     <div class="record"><b>紀錄</b>演唱會後來好幾場都滿座。這三支片子到底有沒有發揮效果，我不知道。</div>
     <div class="acts">
+      <a class="go" href="https://www.youtube.com/watch?v=bgw1i_q4Qks" target="_blank" rel="noopener">根之章 →</a>
       <a class="go" href="https://www.youtube.com/watch?v=MnNbR1AUA50" target="_blank" rel="noopener">幹之章 →</a>
       <a class="go" href="https://www.youtube.com/watch?v=W7JKCUwHoVA" target="_blank" rel="noopener">葉之章 →</a>
     </div>
-  </article>
-
-  <article class="case fade" id="c-cpa">
-    <a class="thumb has t-c" href="https://www.youtube.com/watch?v=Vol4B4Ucc9g" target="_blank" rel="noopener"><img src="home-assets/cpa.jpg" alt=""><span class="cap">看片子｜會計師曾書薰</span><span class="play">▶</span><span class="len">2:54</span></a>
-    <h3>會計師曾書薰｜陪客戶一起長大的會計師</h3>
-    <p class="meta">演講前播放的影片</p>
+  </div>
+  <button class="more" type="button" aria-expanded="false" aria-controls="b-c-sang">查看更多</button>
+  <a class="thumb has t-b" href="https://www.youtube.com/watch?v=5Q066l5pF1Q" target="_blank" rel="noopener"><img src="home-assets/sang2.jpg" alt=""><span class="cap">看片子｜導演版</span><span class="play">▶</span><span class="len">4:17</span></a>
+</article>
+<article class="post fade" id="c-cpa">
+  <header class="post-h"><img src="portrait.jpg" alt=""><div><h3>會計師曾書薰｜陪客戶一起長大的會計師</h3><span>演講前播放的影片</span></div></header>
+  <div class="post-body clamp" id="b-c-cpa">
     <p>當時她想要有個轉變，打算去扶輪社演講。我想替她做一支演講前先播的影片，讓現場的人先認識她。</p>
     <p>一開始我也不知道該往哪個方向做，就先跟她訪談。訪談裡我注意到兩件事。</p>
     <p>第一，她的辦公室就在客戶的公司裡，在樓中樓的二樓。每天進門，要先爬一道很高的樓梯。第二，她很喜歡爬山和跑馬拉松。</p>
@@ -424,55 +548,175 @@ footer{padding:34px 0 60px;color:var(--faint);font-size:13.5px;border-top:1px so
     <p>我建議把方向放在「陪客戶一起從小長到大的會計師」，用登山和爬樓梯來拍。她說好。</p>
     <p>片子做完，她沒有馬上用這個方向。</p>
     <p class="q">她看過影片之後，重新發現了自己做過的事情的份量。要怎麼有系統地再提供這樣的服務，她覺得必須再深思，才能設計出擔得起這份責任的服務流程。</p>
-  </article>
-
-  <article class="case fade" id="c-5in">
-    <a class="thumb has t-a" href="https://www.youtube.com/watch?v=bjZU9xXtfDI" target="_blank" rel="noopener"><img src="home-assets/5in.jpg" alt=""><span class="cap">看片子｜5IN 實驗教育機構</span><span class="play">▶</span><span class="len">3:01</span></a>
-    <h3>5IN 實驗教育機構｜一所新學校，連續三個學期</h3>
-    <p class="meta">從學校成立前開始，目前第三學期進行中</p>
+  </div>
+  <button class="more" type="button" aria-expanded="false" aria-controls="b-c-cpa">查看更多</button>
+  <a class="thumb has t-c" href="https://www.youtube.com/watch?v=Vol4B4Ucc9g" target="_blank" rel="noopener"><img src="home-assets/cpa.jpg" alt=""><span class="cap">看片子｜會計師曾書薰</span><span class="play">▶</span><span class="len">2:54</span></a>
+</article>
+<article class="post fade" id="c-5in">
+  <header class="post-h"><img src="portrait.jpg" alt=""><div><h3>5IN 實驗教育機構｜一所新學校，連續三個學期</h3><span>從學校成立前開始，目前第三學期進行中</span></div></header>
+  <div class="post-body clamp" id="b-c-5in">
     <p>22 支影片。其中八成的素材是老師和學生自己拍的，我到場拍關鍵的日子。</p>
     <p>每個學期開始前，都先問同一個問題：現在要讓誰看懂什麼。所以三個學期做出來的東西都不一樣。</p>
-    <a class="go" href="https://martyhou.com/5in" target="_blank" rel="noopener">看完整經過 →</a>
-  </article>
-</div></section>
+    <a class="go" href="https://martyhou.com/5in" target="_blank" rel="noopener">了解兩個學期的完整規劃 →</a>
+  </div>
+  <button class="more" type="button" aria-expanded="false" aria-controls="b-c-5in">查看更多</button>
+  <a class="thumb has t-a" href="https://www.youtube.com/watch?v=bjZU9xXtfDI" target="_blank" rel="noopener"><img src="home-assets/5in.jpg" alt=""><span class="cap">看片子｜5IN 實驗教育機構</span><span class="play">▶</span><span class="len">3:01</span></a>
+</article>
+<article class="post fade">
+  <header class="post-h"><img src="portrait.jpg" alt=""><div><h3>CraftSoul 第二季｜公視 TaiwanPlus</h3><span>參與過的系列節目｜我是其中一個角色</span></div></header>
+  <div class="post-body">
+    <p>台灣工藝職人的紀錄片系列。由有時電影公司主導，我負責攝影、撰稿企劃。</p>
+    <a class="go" href="https://www.youtube.com/playlist?list=PLbSMhGhpYHH1qNKSONDbuGrdAt4-BU_sq" target="_blank" rel="noopener">看播放清單 →</a>
+  </div>
+  <a class="thumb has t-d" href="https://www.youtube.com/playlist?list=PLbSMhGhpYHH1qNKSONDbuGrdAt4-BU_sq" target="_blank" rel="noopener"><img src="home-assets/craft.jpg" alt=""><span class="cap">CraftSoul 第二季</span><span class="play">▶</span></a>
+</article>
+</div></div>
 
-<section id="refer"><div class="wrap narrow">
-  <h2 class="fade">如果你想介紹人給我</h2>
-  <p class="sec-title serif fade">聽到這些話，可以想到我。</p>
-  <div class="hear fade">
-    <span>「我們要辦活動，想留個紀錄。」</span>
-    <span>「想拍幾支客戶見證。」</span>
-    <span>「有新產品要介紹。」</span>
-    <span>「年會要一支開場影片。」</span>
-    <span>「我們做的事，很難跟外面的人講清楚。」</span>
-  </div>
-
-  <p class="fade">可以直接這樣介紹：</p>
-  <div class="say fade">
-    <p class="when">平常這樣說就好</p>
-    <p class="txt" id="s1">介紹你認識 Marty，做影片的。他很會問問題。先聊聊就好，不用有案子。</p>
-    <button data-copy="s1">複製</button>
-  </div>
-  <div class="say fade">
-    <p class="when">遇到做的事不太好解釋的人</p>
-    <p class="txt" id="s2">你做的事不太好跟別人解釋對吧？我認識一個導演 Marty，常幫這樣的人把自己在做什麼講清楚。</p>
-    <button data-copy="s2">複製</button>
-  </div>
-  <div style="height:26px"></div>
-
-  <p class="fade">我特別想認識的人：</p>
-  <div class="cards fade">
-    <div class="card">很有自己想法、做事常跟同業不一樣的老闆與專業人士。<small>聽他講自己那一行，跟別人講的都不太一樣。</small></div>
-    <div class="card">做的事比較新、外界還不容易看懂的機構。</div>
-    <div class="card">客戶要先理解、先信任才會成交的行業，那裡的負責人與行銷主管。<small>醫療、教育、長照、建築設計。</small></div>
-    <div class="card">固定要製作影片的單位。<small>公部門與文化機構的推廣、專案承辦人，基金會，公關公司。</small></div>
-  </div>
-  <a class="go fade" data-go="home" data-t="contact">聯絡方式 →</a>
+<section class="cross"><div class="wrap narrow">
+  <p class="fade" style="margin:0 0 10px;color:var(--soft)">需求很清楚，只是要一支宣傳、介紹或活動紀錄？</p>
+  <a class="go fade" data-go="common">看製作項目 →</a>
 </div></section>
 
 </div>
 
-<footer><div class="wrap">聯結影像有限公司｜侯念宗 Marty Hou</div></footer>
+<!-- ================= 製作項目 ================= -->
+<div data-page="common" hidden>
+
+<div class="ov"><div class="wrap">
+  <h1 class="sr">製作項目</h1>
+  <section class="ov-group fade" id="g-promo">
+    <header><h3>宣傳影片</h3></header>
+    <p class="ov-desc">宣傳演出、服務、產品、店家。拍好客戶最想說的那一點。</p>
+    <div class="films">
+      <a class="film" href="https://www.youtube.com/watch?v=9mjbOPihSYM" target="_blank" rel="noopener" data-title="兩廳院演出｜沒有害怕太陽和下雨"><span class="th"><img src="home-assets/sun1.jpg" alt=""><span class="tc">2:21</span></span><span class="t">沒有害怕太陽和下雨</span><span class="s">兩廳院演出</span></a>
+      <a class="film" href="https://www.youtube.com/watch?v=WnjcucoxPt0" target="_blank" rel="noopener" data-title="牙醫診所｜15 秒廣告 × 4"><span class="th"><img src="home-assets/pin1.jpg" alt=""><span class="tc">1:09</span></span><span class="t">15 秒廣告 × 4</span><span class="s">牙醫診所</span></a>
+      <a class="film" href="https://youtube.com/shorts/GkSH1Rt_zjE" target="_blank" rel="noopener" data-title="咖啡店｜直式"><span class="th"><img src="home-assets/hong.jpg" alt=""><span class="tc">0:46</span></span><span class="t">咖啡店</span><span class="s">直式短片</span></a>
+    </div>
+  </section>
+  <section class="ov-group fade" id="g-intro">
+    <header><h3>介紹影片</h3></header>
+    <p class="ov-desc">產品介紹、服務介紹、提案簡報。把一件事在幾分鐘內講明白。</p>
+    <div class="films">
+      <a class="film" href="https://www.youtube.com/watch?v=hPz6D5IbScw" target="_blank" rel="noopener" data-title="故宮｜東南亞語文物導覽"><span class="th"><img src="home-assets/npm2.jpg" alt=""><span class="tc">4:14</span></span><span class="t">東南亞語文物導覽</span><span class="s">故宮</span></a>
+      <a class="film" href="https://www.youtube.com/watch?v=stZSlxm7QL4" target="_blank" rel="noopener" data-title="建築師事務所｜投標簡報開場"><span class="th"><img src="home-assets/lib.jpg" alt=""><span class="tc">2:50</span></span><span class="t">投標簡報開場</span><span class="s">建築師事務所</span></a>
+      <a class="film" href="https://www.youtube.com/watch?v=JLa5NyH24o0" target="_blank" rel="noopener" data-title="牙醫師訪談"><span class="th"><img src="home-assets/iv1.jpg" alt=""><span class="tc">0:59</span></span><span class="t">牙醫師訪談</span></a>
+      <a class="film" href="https://www.youtube.com/watch?v=dFvxKDD37qs" target="_blank" rel="noopener" data-title="醫師介紹器材"><span class="th"><img src="home-assets/shi.jpg" alt=""><span class="tc">1:53</span></span><span class="t">醫師介紹器材</span></a>
+      <a class="film" href="https://www.youtube.com/watch?v=Z7g23aDmook" target="_blank" rel="noopener" data-title="膳食纖維創辦人"><span class="th"><img src="home-assets/guo.jpg" alt=""><span class="tc">3:02</span></span><span class="t">膳食纖維創辦人</span></a>
+      <a class="film" href="https://www.youtube.com/watch?v=MUGwa4zbJdA" target="_blank" rel="noopener" data-title="牙醫診所｜放假兩天植牙方案"><span class="th"><img src="home-assets/two.jpg" alt=""><span class="tc">3:43</span></span><span class="t">放假兩天植牙方案</span><span class="s">牙醫診所</span></a>
+    </div>
+  </section>
+  <section class="ov-group fade" id="g-event">
+    <header><h3>活動紀錄</h3></header>
+    <p class="ov-desc">活動的精華全貌。預算有限也可拍照為主，加一點影片。</p>
+    <div class="films">
+      <a class="film" href="https://www.youtube.com/watch?v=Z1KcucMnxfU" target="_blank" rel="noopener" data-title="醫療品牌｜新品發表會"><span class="th"><img src="home-assets/zyg.jpg" alt=""><span class="tc">3:31</span></span><span class="t">新品發表會</span><span class="s">醫療品牌</span></a>
+      <a class="film" href="https://www.youtube.com/watch?v=aU2JLge99Hg" target="_blank" rel="noopener" data-title="品酒讀書分享會"><span class="th"><img src="home-assets/wine.jpg" alt=""><span class="tc">1:51</span></span><span class="t">品酒讀書分享會</span></a>
+      <a class="film" href="https://www.youtube.com/watch?v=tmasbDtqhS8" target="_blank" rel="noopener" data-title="大學迎新｜照片為主，加少量影片"><span class="th"><img src="home-assets/fju.jpg" alt=""><span class="tc">3:02</span></span><span class="t">大學迎新</span><span class="s">照片為主，加少量影片</span></a>
+    </div>
+  </section>
+</div></div>
+
+<section class="cross"><div class="wrap narrow">
+  <p class="fade" style="margin:0 0 10px;color:var(--soft)">還不確定要拍什麼，或者一支片講不完？</p>
+  <a class="go fade" data-go="long">看代表案例 →</a>
+</div></section>
+
+</div>
+
+<!-- ================= 關於 ================= -->
+<div data-page="about" hidden>
+
+<div class="pagehead"><div class="wrap narrow">
+  <a class="back" data-go="home">← 回首頁</a>
+  <h1>關於</h1>
+</div></div>
+
+<section id="about" style="border-top:0"><div class="wrap narrow">
+  <div class="about fade">
+    <img src="portrait.jpg" alt="侯念宗">
+    <div>
+      <p>侯念宗，做影片 10 年，以訪談和紀錄類的片子為主。</p>
+      <p>有的客戶說我很會問問題。</p>
+      <ul class="plain">
+        <li>學攝影的時候，把一整本教科書從頭拍到尾，因此得到跟老師合作的機會。</li>
+        <li>問過一個別人覺得不用問的小問題。那支片後來拿到國際獎，就是<a class="go" data-go="long" data-t="c-npm">故宮那一支</a>。</li>
+        <li>其實我真的很多都不懂，但這樣好像比較好。</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section id="meet"><div class="wrap narrow">
+  <h2 class="fade">我特別想認識的</h2>
+  <div class="cards fade" style="margin:20px 0 0">
+    <div class="card">很有自己想法、做事常跟同業不一樣的老闆與專業人士。<small>講自己那一行，跟別人講的都不太一樣。</small></div>
+    <div class="card">做的事比較新、外界還不容易看懂的機構。<small>如實驗教育、新技術推廣</small></div>
+    <div class="card">客戶要先理解、先信任才會成交的行業，那裡的負責人與行銷主管。<small>如醫療、教育、建築設計等</small></div>
+    <div class="card">固定要製作影片的單位。<small>公部門與文化機構的推廣、專案承辦人，基金會，公關公司。</small></div>
+  </div>
+</div></section>
+
+<section class="contactband"><div class="wrap">
+  <h2 class="fade">聯絡</h2>
+  <p class="fade" style="margin:6px 0 0">Email 優先。</p>
+  <div class="clist fade">
+    <a href="mailto:martyhou@martyhou.com"><small>EMAIL</small><b>martyhou@martyhou.com</b></a>
+    <a href="https://line.me/ti/p/~martyhou" target="_blank" rel="noopener"><small>LINE</small><b>martyhou</b></a>
+    <a href="https://www.youtube.com/@marty_hou" target="_blank" rel="noopener"><small>YOUTUBE</small><b>@marty_hou</b></a>
+  </div>
+</div></section>
+
+</div>
+
+<footer class="copy"><div class="wrap">© 2026 侯念宗 聯結影像</div></footer>
+
+<div class="fabmenu" id="menu" hidden>
+  <a data-go="home">首頁</a>
+  <a data-go="long">代表案例</a>
+  <a data-go="common">製作項目</a>
+  <a data-go="about">關於我／聯絡</a>
+</div>
+<button class="fab" id="burger" type="button" aria-label="選單" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="影片播放">
+  <button class="lb-x" id="lb-x" aria-label="關閉">×</button>
+  <div class="lb-box">
+    <div class="lb-frame" id="lb-frame"></div>
+    <div class="lb-bar"><span id="lb-t"></span><a id="lb-yt" href="#" target="_blank" rel="noopener">在 YouTube 開啟</a></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var lb=document.getElementById('lb'),fr=document.getElementById('lb-frame'),x=document.getElementById('lb-x'),last=null;
+  function vid(h){var m=/[?&]v=([\w-]{6,})/.exec(h)||/youtu\.be\/([\w-]{6,})/.exec(h)||/\/shorts\/([\w-]{6,})/.exec(h);return m?m[1]:null;}
+  function close(){lb.hidden=true;fr.innerHTML='';document.body.style.overflow='';if(last){try{last.focus();}catch(e){}}}
+  document.addEventListener('click',function(ev){
+    var a=ev.target.closest?ev.target.closest('a.thumb[href],a.film[href]'):null;
+    if(!a)return;
+    var h=a.getAttribute('href'),id=vid(h);
+    if(!id||h.indexOf('playlist')>-1)return;
+    var top=false;try{top=window.self===window.top;}catch(e){}
+    if(!top)return;
+    ev.preventDefault();
+    last=a;
+    lb.classList.toggle('tall',h.indexOf('/shorts/')>-1);
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&playsinline=1';
+    f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen=true;
+    f.title='影片播放器';
+    fr.innerHTML='';fr.appendChild(f);
+    var c=a.querySelector('.cap');
+    var ci=c?c.querySelector('i'):null,cb=c?c.querySelector('b'):null;document.getElementById('lb-t').textContent=a.getAttribute('data-title')?a.getAttribute('data-title'):c?((ci&&cb)?ci.textContent+'｜'+cb.textContent:c.textContent.replace(/^看片子｜/,'')):'';
+    document.getElementById('lb-yt').href=h;
+    lb.hidden=false;document.body.style.overflow='hidden';x.focus();
+  });
+  x.addEventListener('click',close);
+  lb.addEventListener('click',function(ev){if(ev.target===lb)close();});
+  document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&!lb.hidden)close();});
+})();
+</script>
 
 <script>
 (function(){
@@ -485,9 +729,15 @@ footer{padding:34px 0 60px;color:var(--faint);font-size:13.5px;border-top:1px so
     els.forEach(function(e){io.observe(e)});
   }
   function show(page,target,push){
+    if(page==='here'){var cur=document.querySelector('[data-page]:not([hidden])');page=cur?cur.getAttribute('data-page'):'home';}
+    if(page==='deep'){page=(target==='refer')?'about':'long';if(target==='refer')target='meet';}
+    if(page==='refer'){page='about';target='meet';}
+    if(page==='home'&&(target==='common'||target==='long')){page=target;target=null;}
     pages.forEach(function(p){p.hidden=(p.getAttribute('data-page')!==page)});
     reveal();
-    var el=target?document.getElementById(target):null;
+    var el=null;
+    if(target==='contact'){el=document.querySelector('[data-page="'+page+'"] .contactband');}
+    else if(target){el=document.getElementById(target);}
     if(el){el.scrollIntoView({behavior:'auto',block:'start'});}else{window.scrollTo(0,0);}
     if(push){try{history.replaceState(null,'','#'+page+(target?':'+target:''));}catch(e){}}
   }
@@ -498,7 +748,7 @@ footer{padding:34px 0 60px;color:var(--faint);font-size:13.5px;border-top:1px so
     show(a.getAttribute('data-go'),a.getAttribute('data-t'),true);
   });
   var h=(location.hash||'').replace('#','').split(':');
-  if(h[0]==='deep'||h[0]==='home'){show(h[0],h[1],false);}else{show('home',null,false);}
+  if(['deep','home','long','common','refer','about'].indexOf(h[0])>-1){show(h[0],h[1],false);}else{show('home',null,false);}
 })();
 document.querySelectorAll('button[data-copy]').forEach(function(b){
   b.addEventListener('click',function(){
@@ -510,5 +760,24 @@ document.querySelectorAll('button[data-copy]').forEach(function(b){
 });
 </script>
 
+<script>
+document.addEventListener('click',function(ev){
+  var b=ev.target.closest?ev.target.closest('button.more'):null;if(!b)return;
+  var body=document.getElementById(b.getAttribute('aria-controls'));if(!body)return;
+  var open=body.classList.toggle('clamp')===false;
+  b.setAttribute('aria-expanded',open?'true':'false');b.textContent=open?'收合':'查看更多';
+  if(!open){var p=b.closest('.post');if(p&&p.getBoundingClientRect().top<0)p.scrollIntoView({block:'start'});}
+});
+</script>
+<script>
+(function(){
+  var b=document.getElementById('burger'),m=document.getElementById('menu');
+  function set(o){m.hidden=!o;b.setAttribute('aria-expanded',o?'true':'false');}
+  b.addEventListener('click',function(ev){ev.stopPropagation();set(m.hidden);});
+  m.addEventListener('click',function(ev){if(ev.target.closest('a'))set(false);});
+  document.addEventListener('keydown',function(ev){if(ev.key==='Escape')set(false);});
+  document.addEventListener('click',function(ev){if(!ev.target.closest('#menu'))set(false);});
+})();
+</script>
 </body>
 </html>
