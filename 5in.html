@@ -35,6 +35,8 @@ h1,h2,h3{text-wrap:balance;line-height:1.25;font-weight:900;letter-spacing:.01em
 .hud > *{pointer-events:auto}
 .hud .who{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;color:var(--muted)}
 .hud .who b{color:var(--ink);font-weight:600}
+.hud .back{font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;color:var(--ink);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:1px;white-space:nowrap}
+.hud .back:hover{opacity:.6}
 .switch{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:var(--panel)}
 .switch button{border:0;background:none;padding:6px 16px;border-radius:999px;cursor:pointer;font-size:14.5px;color:var(--muted)}
 .switch button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);font-weight:700}
@@ -197,6 +199,7 @@ dialog::backdrop{background:rgba(8,9,11,.88)}
 <body>
 <div class="progress" id="progress"></div>
 <header class="hud">
+  <a class="back" href="https://martyhou.com/">← 回主頁</a>
   <span class="who"><b>侯念宗 Marty Hou</b>　×　5IN 實驗教育機構</span>
   <div class="switch" role="group" aria-label="檢視方式">
     <button type="button" id="toDeck" aria-pressed="true">簡報</button>
@@ -372,8 +375,9 @@ dialog::backdrop{background:rgba(8,9,11,.88)}
     <dl class="lines">
       <dt>侯念宗</dt><dd>聯結影像有限公司</dd>
       <dt>EMAIL</dt><dd><a href="mailto:martyhou@martyhou.com">martyhou@martyhou.com</a></dd>
-      <dt>電話</dt><dd><a href="tel:+886911411193">0911-411-193</a></dd>
+      <dt>LINE</dt><dd><a href="https://line.me/ti/p/~martyhou" target="_blank" rel="noopener">martyhou</a></dd>
       <dt>YOUTUBE</dt><dd><a href="https://www.youtube.com/@marty_hou" target="_blank" rel="noopener">@marty_hou</a></dd>
+      <dt>網站</dt><dd><a href="https://martyhou.com/">martyhou.com</a></dd>
     </dl>
     <button type="button" class="btn" id="endToOv">看全部 22 支影片 →</button>
   </div>
