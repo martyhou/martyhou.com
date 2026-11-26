@@ -484,6 +484,13 @@ footer.copy a{color:#111;font-weight:700;font-size:14px;cursor:pointer;text-deco
 .fabmenu .langsw{font-weight:400;color:#555}
 /* v46 */
 .post-foot .acts{margin:0;gap:6px 20px}
+
+/* ===== 自我介紹片：縮圖當封面，點了在原位播 YouTube ===== */
+.heroshot .play{position:relative;display:block;flex:1 1 auto;min-width:0;width:100%;padding:0;margin:0;border:0;background:#111;cursor:pointer}
+.heroshot .play img,.heroshot iframe{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border:0}
+.heroshot .pbtn{position:absolute;left:50%;top:38%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(10,10,11,.62);border:1.5px solid rgba(255,255,255,.85);transition:background .2s,transform .2s}
+.heroshot .pbtn::after{content:"";position:absolute;left:26px;top:20px;border-style:solid;border-width:12px 0 12px 19px;border-color:transparent transparent transparent #fff}
+.heroshot .play:hover .pbtn,.heroshot .play:focus-visible .pbtn{background:rgba(255,204,0,.9);transform:scale(1.06)}
 </style>
 </head>
 <body>
@@ -507,8 +514,8 @@ footer.copy a{color:#111;font-weight:700;font-size:14px;cursor:pointer;text-deco
     <div class="heroleft">
       <p class="who fade">宣傳、介紹、活動紀錄，是我平常在做的。<br>花上幾個月的紀錄片，我也做。</p>
       <figure class="heroshot fade">
-        <img src="home-assets/hero.jpg" alt="侯念宗在拍攝現場聽對方說話">
-        <figcaption>2018 年，訪談現場。</figcaption>
+        <button class="play" type="button" data-yt="lXG4AqtU6vc" aria-label="播放自我介紹影片，1 分 16 秒"><img src="home-assets/intro.jpg" width="1280" height="720" alt="六個人專注看著什麼的臉，下方字：看見真的不一樣，侯念宗，影片企劃製作"><span class="pbtn" aria-hidden="true"></span></button>
+        <figcaption>自我介紹，1 分 16 秒。</figcaption>
       </figure>
     </div>
   </div>
@@ -855,6 +862,19 @@ document.addEventListener('click',function(ev){
   ev.preventDefault();
   var cur=document.querySelector('[data-page]:not([hidden])');
   location.href=a.getAttribute('data-lang')+'#'+(cur?cur.getAttribute('data-page'):'home');
+});
+</script>
+<script>
+/* 自我介紹片：點縮圖才載入 YouTube（不先載第三方，頁面比較快） */
+document.querySelectorAll('.heroshot .play').forEach(function(b){
+  b.addEventListener('click',function(){
+    var f=document.createElement('iframe');
+    f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?autoplay=1&rel=0&playsinline=1';
+    f.title=b.getAttribute('aria-label');
+    f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+    f.allowFullscreen=true;
+    b.replaceWith(f);
+  });
 });
 </script>
 </body>
