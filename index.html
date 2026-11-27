@@ -495,6 +495,10 @@ footer.copy a{color:#111;font-weight:700;font-size:14px;cursor:pointer;text-deco
 .post .tags{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
 .post .tags .tag{margin:0}
 .post .tag.stop{background:#fff;color:#111;box-shadow:inset 0 0 0 1.5px #111}
+/* v42：查看更多可指定切點（.cutmode 的 body 裡，.cut 之前全部顯示，之後收起） */
+.post-body.clamp.cutmode > *,.post-body.clamp.cutmode > :first-child,.post-body.clamp.cutmode > .bg:first-child + *{display:block;-webkit-line-clamp:unset;overflow:visible;margin-bottom:.8em}
+.post-body.clamp.cutmode > .cut{margin-bottom:0}
+.post-body.clamp.cutmode > .cut ~ *{display:none}
 </style>
 </head>
 <body>
@@ -564,15 +568,16 @@ footer.copy a{color:#111;font-weight:700;font-size:14px;cursor:pointer;text-deco
 <article class="post fade" id="c-npm">
   <div class="tags"><span class="tag stop">認識一個人</span></div>
   <header class="post-h"><img src="portrait.jpg" alt=""><div><h3>故宮｜新住民文化導覽課程紀錄片</h3><span>國立故宮博物院委託｜2019 年開拍，2023 年上架</span></div></header>
-  <div class="post-body clamp" id="b-c-npm">
+  <div class="post-body clamp cutmode" id="b-c-npm">
     <p class="bg">故宮開課培訓新住民，讓他們用母語替同鄉導覽文物。我負責把這門課拍成紀錄片。</p>
-    <p>我一直找不到片子的主角。我心裡覺得要有個主角才會好看，不然就只是一般的活動紀錄。</p>
-    <p>後來主辦方介紹了一位住在彰化的越南學員。為了上課，她清晨四五點就得出門，有時前一天就先上台北過夜。</p>
-    <p>我寒暄兩句，問了一個對片子其實沒什麼意義的問題：</p>
+    <p>從開拍當天，我就覺得需要一個主角，讓觀眾真的看到，培訓對學員到底有什麼意義，不然就只是記錄程序而已，有點浪費。</p>
+    <p class="cut">主角真的不好找，怎麼找到的也很意外……</p>
+    <p>我訪談了至少七八個，覺得有點累、有點氣餒，覺得自己也算是盡力了。這時候，主辦方介紹了一位住在彰化的越南學員。為了上課，她清晨四五點就得出門，有時前一天就先上台北過夜。</p>
+    <p>我寒暄兩句，下意識問了一個對片子來說，其實沒什麼意義的問題：</p>
     <p class="q">「這麼遠，你一個人來不會很無聊嗎？怎麼沒有朋友跟你一起來，當作是來台北玩？」</p>
     <p>她忽然哭了。她說家鄉來的其他姊妹都笑她，有這時間不如拿去賺錢。但她就是很喜歡學習。</p>
-    <p>我就找到了主角。</p>
-    <p>觀眾不用聽完整門課，跟著她，就知道這門課對一個人來說是什麼。</p>
+    <p>主角找到了。</p>
+    <p>對她來說，這門課給了異鄉人一群夥伴，也給了他們一個前進的機會。</p>
     <div class="record"><b>紀錄</b>休士頓國際影展 紀錄片銀獎、成人教育金獎</div>
   </div>
   <button class="more" type="button" aria-expanded="false" aria-controls="b-c-npm">查看更多</button>
